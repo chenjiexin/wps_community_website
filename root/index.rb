@@ -18,7 +18,7 @@ def read_news fname
     f.each_line do |l|
       l.chomp!
       if l.size == 0
-        content += "</p>\n<p>"
+        content += "</p><br/>\n<p>"
       else
         content += l + " "
       end
@@ -43,8 +43,9 @@ cont = <<EOF
 <h1>Welcome to Kingsoft Office International Community</h1>
 <ul>
   <li><b>About Kingsoft Office:</b> Kingsoft Office ( also known as WPS Office ) is a vibrant office suite since 1989.
-  We have more than 200 developers and always 
-  devote ourselves to creating comfortable, efficient and smart office experience.</li>
+  We have more than 200 developers and always devote ourselves to creating comfortable, efficient and smart office experience.
+  For more information, you can visit our <a href="http://www.ksosoft.com">offical website</a>, or 
+  click <a href="http://www.ksosoft.com/company/index.html">here</a> to our offical website's about page, directly.</li>
   <li><b>About us:</b> We are a small branch of the Kingsoft Office team,
   which also devotes itself to porting Kingsoft Office to Linux and Linux-like systems, 
   and offers their users native experience.</li>
