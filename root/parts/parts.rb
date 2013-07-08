@@ -48,7 +48,7 @@ def html_tail
 <<EOF
 <br/>
 <div id="foot"> 
-  <span><a href="http://www.ksosoft.com">Offical Site</a> | <a href="http://www.wps.cn">Chinese Site</a>
+  <span><a href="http://www.ksosoft.com">Official Site</a> | <a href="http://www.wps.cn">Chinese Site</a>
     | <a href="http://community.wps.cn">Chinese Community</a> | <a href="/aboutus.html">About us</a>
     | <a href="mailto:wps_linux@kingsoft.com">Contact us</a></span>
   <span>Copyright &copy; 1989-2013 Kingsoft Office Corporation, All Rights Reserved</span>
