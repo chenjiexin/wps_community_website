@@ -111,4 +111,17 @@ a:hover{
 }
 #slides {
   display: none;
+  position: relative;
+}
+.slidesjs-previous {
+  position: absolute;
+  top: 87px;
+  left: 12px;
+  z-index: 20;
+}
+.slidesjs-next {
+  position: absolute;
+  top: 87px;
+  right: 12px;
+  z-index: 20;
 }

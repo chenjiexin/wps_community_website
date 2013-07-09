@@ -46,6 +46,8 @@ cont = <<EOF
     <img src="/images/aaa.png">
     <img src="/images/aaa.png">
     <img src="/images/aaa.png">
+    <a href="#" class="slidesjs-previous slidesjs-navigation"><img src="/images/left.png"></i></a>
+    <a href="#" class="slidesjs-next slidesjs-navigation"><img src="/images/right.png"></i></a>
   </div>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="js/jquery.slides.min.js"></script>
