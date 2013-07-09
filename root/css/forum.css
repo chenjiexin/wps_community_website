@@ -182,6 +182,7 @@ p.right {
 }
 
 .navbar {
+	margin-top: 20px;
 	background-color: #ebebeb;
 	padding: 0 10px;
 }
