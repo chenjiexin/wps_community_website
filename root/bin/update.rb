@@ -3,13 +3,19 @@
 puts "Content-Type: text/plain"
 puts 
 
+s = `git rev-parse HEAD`
+
 gitlog = `git pull --rebase 2>&1`
 puts gitlog
 
 gitret = "git pull return: #{$?}"
 puts gitret
 
-if File.exists? $root + "/forum/cache"
+e = `git rev-parse HEAD`
+
+if s == e
+  puts "No file updated."
+elsif File.exists? $root + "/forum/cache"
   puts `rm #{$root + "/forum/cache/*.php"} -v`
 end
 
