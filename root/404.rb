@@ -3,7 +3,8 @@ require 'include/parts.rb'
 require 'yaml'
 
 open($root2 + "/log/404.log", "a") do |f|
-  f.puts Time.now.strftime("%F %T %z") + " " + "http://" + ENV['HTTP_HOST'] + ENV['REQUEST_URI']
+  f.puts Time.now.strftime("%F %T %z") + " " + ENV['REMOTE_ADDR'] + " " + 
+      "http://" + ENV['HTTP_HOST'] + ENV['REQUEST_URI']
 end
 
 cont = <<EOF
