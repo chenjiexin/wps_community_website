@@ -1,6 +1,9 @@
 require 'cgi'
 require 'include/parts.rb'
+require 'include/funcs.rb'
 require 'yaml'
+
+lang_redirect 'zh', 'http://community.wps.cn/download/#alpha'
 
 def html_version_item f
   cont = ""
