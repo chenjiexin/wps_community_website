@@ -21,6 +21,6 @@ Request URI: #{ENV['REQUEST_URI']}<br/>
 #{html_tail}
 EOF
 
-$cgi.out("status" => 404) {
+$cgi.out("status" => "404") {
   cont
 }
