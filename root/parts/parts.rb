@@ -34,13 +34,6 @@ def html_header title
     </div>
   </div>
 </div>
-<div>
-  <p class="framed">
-    <b>Tips: </b>Currently, our community is starting. We will change our pages frequently. 
-    If you meet some error(such as 404, 500), visit it after a while, please!
-    If nothing improved after some days, <a href="mailto:wps_linux@kingsoft.com">contact us</a>.
-  </p>
-</div>
 EOF
 end
 
