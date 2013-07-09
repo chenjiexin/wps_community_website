@@ -1,5 +1,5 @@
 require 'cgi'
-require 'parts/parts.rb'
+require 'include/parts.rb'
 require 'yaml'
 
 open($root2 + "/log/404.log", "a") do |f|

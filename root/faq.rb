@@ -1,5 +1,5 @@
 require 'cgi'
-require 'parts/parts.rb'
+require 'include/parts.rb'
 require 'yaml'
 
 def get_ref_name q

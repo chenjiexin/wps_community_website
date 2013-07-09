@@ -9,7 +9,7 @@ $cgi = CGI.new
 $root = ENV['DOCUMENT_ROOT'] ? ENV['DOCUMENT_ROOT'] : Dir.pwd
 $LOAD_PATH << $root
 
-require 'parts/parts.rb'
+require 'include/parts.rb'
 
 begin
   cont = `markdown "#{ARGV[0]}" 2>&1`

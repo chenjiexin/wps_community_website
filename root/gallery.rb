@@ -1,5 +1,5 @@
 require 'cgi'
-require 'parts/parts.rb'
+require 'include/parts.rb'
 require 'yaml'
 
 def html_gallery_item item
