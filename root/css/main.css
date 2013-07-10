@@ -115,13 +115,13 @@ a:hover{
 }
 .slidesjs-previous {
   position: absolute;
-  top: 87px;
+  top: 102px;
   left: 12px;
   z-index: 20;
 }
 .slidesjs-next {
   position: absolute;
-  top: 87px;
+  top: 102px;
   right: 12px;
   z-index: 20;
 }
