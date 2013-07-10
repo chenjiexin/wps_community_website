@@ -51,9 +51,7 @@ cont = <<EOF
   <div class="center">
     Kingsoft Office is a simple, effective, powerful and comfortable office suite, which has been released in 1989. Now porting to Linux. <br/>
     Let us do our best to make a best Linux Office Suite.
-    For <a href="http://www.ksosoft.com/downloads/windows.html" target="_blank">Windows</a>/
-    <a href="http://www.ksosoft.com/downloads/android.html" target="_blank">Android</a>/
-    <a href="http://www.ksosoft.com/downloads/ios.html" target="_blank">iOS</a>, 
+    For <a href="http://www.ksosoft.com/downloads/windows.html" target="_blank">Windows</a>/<a href="http://www.ksosoft.com/downloads/android.html" target="_blank">Android</a>/<a href="http://www.ksosoft.com/downloads/ios.html" target="_blank">iOS</a>, 
     click <a href="http://www.ksosoft.com/" target="_blank">here</a>, please.
   </div>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
