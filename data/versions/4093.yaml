@@ -16,7 +16,7 @@ whats_new: |
     Fixed: Cannot hide Grid and Guides in Kingsoft Presentation.
     Fixed: Kingsoft Presentation deadloop when playing sound in certain situations.
     Fixed: Cannot set default layout of slides in English version in Kingsoft Presentation.
-    Fixed: Error in calculating charactor width when using a font does not exist in system in Kingsoft Spreatsheets.
+    Fixed: Error in calculating charactor width when using a font which is not exist in system in Kingsoft Spreatsheets.
     Fixed: The view will scroll to top-right after finishing editing in the case of non-100% zoom.
 release_notes: |
     Welcome to WPS Community website <a href="http://wps-community.org">http://wps-community.org/</a>. The links have also been added to the help menu.
