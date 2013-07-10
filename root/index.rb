@@ -49,7 +49,7 @@ cont = <<EOF
     <a href="#" class="slidesjs-next slidesjs-navigation"><img src="/images/right.png"></i></a>
   </div>
   <div class="center">
-    Kingsoft Office, the simple, effective, powerful and comfortable office suite, since 1989. It had landed Linux. <br/>
+    Kingsoft Office is a simple, effective, powerful and comfortable office suite, which has been released in 1989. Now porting to Linux. <br/>
     Let us do our best to make a best Linux Office Suite.
     For <a href="http://www.ksosoft.com/downloads/windows.html" target="_blank">Windows</a>/
     <a href="http://www.ksosoft.com/downloads/android.html" target="_blank">Android</a>/
