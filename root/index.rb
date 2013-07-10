@@ -41,25 +41,38 @@ end
 cont = <<EOF
 #{html_header "Home"}
 <h1>Welcome to Kingsoft Office International Community</h1>
-<ul>
-  <li><b>About Kingsoft Office:</b> Kingsoft Office ( also known as WPS Office ) is a vibrant office suite since 1989.
-  We have more than 200 developers and always devote ourselves to creating comfortable, efficient and smart office experience.
-  Kingsoft Office is cross-platform commercial software. So far, we have had <a href="http://www.ksosoft.com/downloads/windows.html" target="_blank">Windows</a> 
-  and <a href="/download.html">Linux</a> versions for desktop, <a href="http://www.ksosoft.com/downloads/android.html" target="_blank">Android</a>
-  and <a href="http://www.ksosoft.com/downloads/ios.html" target="_blank">iOS</a> versions for mobile.
-  For more information, you can visit our <a href="http://www.ksosoft.com" target="_blank">official website</a>, or 
-  click <a href="http://www.ksosoft.com/company/index.html" target="_blank">here</a> to our official website's about page directly.</li>
-  <li><b>About us:</b> We are a small branch of the Kingsoft Office team,
-  which also devotes itself to porting Kingsoft Office to Linux and Linux-like systems, 
-  and offers their users native experience.</li>
-  <li><b>Annotation:</b> Due to some historical reasons, our product have had several different names: 
-  <b>WPS Office</b> (widely used in Asian area, can be abbreviated to <b>WPS</b>);
-  <b>Kingsoft Office</b>(widely used in Europe and America countries, can be abbreviated to <b>KSO</b>),
-  <b>Kingsoft WPS Office</b>(used to let all of us understand).
-  Those names mentioned above can be used on our site.</li>
-  <li><b>Help us:</b> If you like Kingsoft Office, tell your friends, please. Kingsoft Office also have 
-  Windows/Android/iOS Versions. You can get it <a href="http://www.ksosoft.com/" target="_blank">here</a>.</li>
-</ul>
+  <div id="slides">
+    <img src="/images/slide-wps.png">
+    <img src="/images/slide-wpp.png">
+    <img src="/images/slide-et.png">
+    <a href="#" class="slidesjs-previous slidesjs-navigation"><img src="/images/left.png"></i></a>
+    <a href="#" class="slidesjs-next slidesjs-navigation"><img src="/images/right.png"></i></a>
+  </div>
+  <div class="center">
+    Kingsoft Office is a simple, effective, powerful and comfortable office suite, which has been released in 1989. Now porting to Linux. <br/>
+    Let us do our best to make a best Linux Office Suite.
+    For <a href="http://www.ksosoft.com/downloads/windows.html" target="_blank">Windows</a>/
+    <a href="http://www.ksosoft.com/downloads/android.html" target="_blank">Android</a>/
+    <a href="http://www.ksosoft.com/downloads/ios.html" target="_blank">iOS</a>, 
+    click <a href="http://www.ksosoft.com/" target="_blank">here</a>, please.
+  </div>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="js/jquery.slides.min.js"></script>
+  <script>
+    $(function() {
+      $('#slides').slidesjs({
+        width: 960,
+        height: 256,
+        play: {
+          interval: 5000,
+          auto: true,
+          pauseOnHover: false
+        },
+        navigation: false,
+        pagination: false
+      });
+    });
+  </script>
 <h1>Latest Announcements</h1>
 #{html_news}
 #{html_tail}
