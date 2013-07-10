@@ -8,12 +8,12 @@ whats_new: |
     Fixed: The program crashed when pass a relative file path to program by command line.
     Fixed: Cannot create another instance of the program when use a different account in Kingsoft Writer and Kingsoft Presentation.
     Fixed: Cannot to match fonts in different locales.
-    Fixed: Cannot disable the online templates auto-start. Now you can set it at "Options->General and Save->Open mode".
+    Fixed: Missing option "disable the online templates auto-start". Now you can set it at "Options->General and Save->Open mode".
     Fixed: The width of WordArt control adapted to the dialog size.
-    Fixed: Cannot open options dialog when current document do not exists in Kingsoft Writer and Kingsoft Presentation.
+    Fixed: Cannot open options dialog when current document do not exist in Kingsoft Writer and Kingsoft Presentation.
     Fixed: Cannot storage settings about font and style to normal template in Kingsoft Writer.
-    Fixed: Missing option "Auto-change straight quote to curaly quote" in Kingsoft Writer.
-    Fixed: Cannot hide grid and guides in Kingsoft Presentation.
+    Fixed: Missing option "Auto convert straight quote to curly quote" in Kingsoft Writer.
+    Fixed: Cannot hide Grid and Guides in Kingsoft Presentation.
     Fixed: Kingsoft Presentation deadloop when playing sound in certain situations.
     Fixed: Cannot set default layout of slides in English version in Kingsoft Presentation.
     Fixed: Error in calculating charactor width when using a font does not exist in system in Kingsoft Spreatsheets.
