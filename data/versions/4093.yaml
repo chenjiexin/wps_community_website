@@ -3,24 +3,23 @@ linux_version: Alpha11
 linux_version_short: a11
 full_name: Kingsoft Office for Linux Alpha11
 whats_new: |
-    Fixed transfer incomplete file path parameter under command line causes crash.
-    Fixed Writer and Presentation cannot create multiple instances of the problem under multiple user environment.
-    Fixed unable to identify the alias name of font correctly under various locales causes font matching errors.
-    Changed the default path of templates directory to "$HOME/.kingsoft/templates".
-    Fixed cannot disable the online templates opened when open program. Now can set it on "Options->General and Save->Open mode"
-    Optimize the "Options" dialog that it can be opened  to change the settings even if the document is not open.(Writer/Presentation)
-    Fixed the cell of insert WordArt dialog is not resized when dialog change size.
-    Writer: Fixed Font and Style dialog cannot save the changes to the default template.
-    Writer: Fixed cannot set the default quotes style(straight quotes or curly quotes).
-    Presentation: Fixed unable to set the grid lines of slides to invisible state.
-    Presentation: Fixed play music causes program to become unresponsive in some special conditions.
-    Presentation: Fixed English version cannot set the default layout of slides.
-    Spreadsheets: Added Pivot table functionality, support for add, delete, change, etc.
-    Spreadsheets: Fixed font width rendering error in some special conditions problem.
-    Spreadsheets: Fixed edit a cell causes the edit view scroll to the top left corner when zoom is not 100%.
+    Added: Supported PivotTable function in Kingsoft Spreatsheets.
+    Changed: Unified the templates dir to ~/.kingsoft/templates 
+    Fixed: The program crashed when pass a relative file path to program by command line.
+    Fixed: Cannot create another instance of the program when use a different account in Kingsoft Writer and Kingsoft Presentation.
+    Fixed: Cannot to match fonts in different locales.
+    Fixed: Cannot disable the online templates auto-start. Now you can set it at "Options->General and Save->Open mode".
+    Fixed: The width of WordArt control adapted to the dialog size.
+    Fixed: Cannot open options dialog when current document do not exists in Kingsoft Writer and Kingsoft Presentation.
+    Fixed: Cannot storage settings about font and style to normal template in Kingsoft Writer.
+    Fixed: Missing option "Auto-change straight quote to curaly quote" in Kingsoft Writer.
+    Fixed: Cannot hide grid and guides in Kingsoft Presentation.
+    Fixed: Kingsoft Presentation deadloop when playing sound in certain situations.
+    Fixed: Cannot set default layout of slides in English version in Kingsoft Presentation.
+    Fixed: Error in calculating charactor width when using a font does not exist in system in Kingsoft Spreatsheets.
+    Fixed: The view will scroll to top-right after finishing editing in the case of non-100% zoom.
 release_notes: |
-    The international community website (http://wps-community.org/) has been launched. 
-    The link also integrated to the program's help menu. Welcome to visit it and discussed at the forum.
+    Welcome to WPS Community website <a href="http://wps-community.org">http://wps-community.org/</a>. The links have also been added to the help menu.
 addresses:
     - type: deb
       address: http://wdl.cache.ijinshan.com/wps/download/Linux/unstable/kingsoft-office_9.1.0.4093~a11_i386.deb
