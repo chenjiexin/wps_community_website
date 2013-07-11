@@ -8,7 +8,7 @@ def html_header title
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="WPSOffice Community"/>
 <meta name="keywords" content="wps4linux, wps4ubuntu, wps for linux, wps for ubuntu, kingsoft office4linux, kingsoft office4ubuntu, kingsoft office for linux, kingsoft office for ubuntu, wps office4linux, wps office4ubuntu, wps office for linux, wps office for ubuntu, office4linux, office4ubuntu, office for linux, office for ubuntu, kso4linux, kso4ubuntu, kso for linux, kso for ubuntu, wps community, kingsoft office community, wps office community, office community, kso community"/>
-<title>Kingsoft WPS Office Community#{title.size == 0 ? "" : ": #{title}"}</title>
+<title>#{title.size == 0 ? "" : "#{title} - "}Kingsoft WPS Office Community</title>
 <link rel="stylesheet" type="text/css" href="/css/main.css" media="all" />
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -31,6 +31,7 @@ def html_header title
       <span><a href="/download.html">Download</a></span>
       <span><a href="/forum">Forum</a></span>
       <span><a href="/faq.html">FAQ</a></span>
+      <span><a href="/helpus.md">Help us</a></span>
     </div>
   </div>
 </div>
