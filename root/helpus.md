@@ -15,8 +15,9 @@ Because a large number of users is a strong guarantee to protect out team to
 continue to make more works. More users support us, more resources we get.
 And more resources will be better enhance our Linux version.
 
-If you like our products, please share with your friends via facebook, twitter, blog, 
-email, in short, can be in any form, which will be helpful for you and us.
+If you like our products, please share with your friends via 
+[facebook](http://facebook.com), [twitter](http://twitter.com), blog, email,
+in short, can be in any form, which will be helpful for you and us.
 
 Give us your feedback
 ---------------------
