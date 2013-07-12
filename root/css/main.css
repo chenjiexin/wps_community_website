@@ -128,3 +128,6 @@ a:hover{
 .center {
   text-align: center;
 }
+.markdown p {
+  margin-bottom: 0.5em;
+}
