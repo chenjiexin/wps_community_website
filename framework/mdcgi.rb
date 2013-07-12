@@ -14,7 +14,9 @@ require 'include/parts.rb'
 begin
   cont = `markdown "#{ARGV[0]}" 2>&1`
   $cgi.out do
-    html_header(ENV["SCRIPT_NAME"]) + cont + html_tail
+    html_header(ENV["SCRIPT_NAME"]) + 
+        "<div class='markdown'>" + cont + "</div>" +
+        html_tail
   end
 rescue
   puts "Content-type: text/plain; charset=utf-8"
