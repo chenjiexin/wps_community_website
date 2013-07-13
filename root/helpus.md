@@ -11,7 +11,7 @@ We strive to let more people know about our team and our products. We hope the
 product to be able to help more people. However, we leak the ways to do it.
 
 And Linux version requires more users to support, it is very important to us.
-Because a large number of users is a strong guarantee to protect out team to 
+Because a large number of users is a strong guarantee to protect our team to 
 continue to make more works. More users support us, more resources we get.
 And more resources will be better enhance our Linux version.
 
