@@ -46,7 +46,7 @@ def html_versions
 end
 
 cont = <<EOF
-#{html_header "Download"}
+#{html_header "Downloads"}
 <script>
   function onDownload(n)
   {
