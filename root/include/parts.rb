@@ -28,7 +28,7 @@ def html_header title
   <div>
     <div class="h_navi">
       <span><a href="/">Home</a></span>
-      <span><a href="/download.html">Download</a></span>
+      <span><a href="/download.html">Downloads</a></span>
       <span><a href="/forum">Forum</a></span>
       <span><a href="/faq.html">FAQ</a></span>
       <span><a href="/helpus.md">Help us</a></span>
