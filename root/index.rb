@@ -42,11 +42,11 @@ cont = <<EOF
 #{html_header "Home"}
 <h1>Welcome to Kingsoft Office International Community</h1>
   <div id="slides">
-    <img src="/images/slide-wps.png">
-    <img src="/images/slide-wpp.png">
-    <img src="/images/slide-et.png">
-    <a href="#" class="slidesjs-previous slidesjs-navigation"><img src="/images/left.png"></i></a>
-    <a href="#" class="slidesjs-next slidesjs-navigation"><img src="/images/right.png"></i></a>
+    <img src="/images/slide-wps.png" alt="Kingsoft Writer snapshot"/>
+    <img src="/images/slide-wpp.png" alt="Kingsoft Presentation snapshot"/>
+    <img src="/images/slide-et.png" alt="Kingsoft Spreadsheets snapshot"/>
+    <a href="#" class="slidesjs-previous slidesjs-navigation"><img src="/images/left.png" alt="left arrow"/></a>
+    <a href="#" class="slidesjs-next slidesjs-navigation"><img src="/images/right.png" alt="right arrow"/></a>
   </div>
   <div class="center">
     Kingsoft Office is a simple, effective, powerful and comfortable office suite, which has been released in 1989. Now porting to Linux. <br/>

@@ -10,7 +10,7 @@ def html_header title
 <meta name="keywords" content="wps4linux, wps4ubuntu, wps for linux, wps for ubuntu, kingsoft office4linux, kingsoft office4ubuntu, kingsoft office for linux, kingsoft office for ubuntu, wps office4linux, wps office4ubuntu, wps office for linux, wps office for ubuntu, office4linux, office4ubuntu, office for linux, office for ubuntu, kso4linux, kso4ubuntu, kso for linux, kso for ubuntu, wps community, kingsoft office community, wps office community, office community, kso community"/>
 <title>#{title.size == 0 ? "" : "#{title} - "}Kingsoft WPS Office Community</title>
 <link rel="stylesheet" type="text/css" href="/css/main.css" media="all" />
-<script>
+<script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
