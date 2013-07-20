@@ -54,9 +54,9 @@ cont = <<EOF
     For <a href="http://www.ksosoft.com/downloads/windows.html" target="_blank">Windows</a>/<a href="http://www.ksosoft.com/downloads/android.html" target="_blank">Android</a>/<a href="http://www.ksosoft.com/downloads/ios.html" target="_blank">iOS</a>, 
     click <a href="http://www.ksosoft.com/" target="_blank">here</a>, please.
   </div>
-  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-  <script src="js/jquery.slides.min.js"></script>
-  <script>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+  <script src="js/jquery.slides.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
     $(function() {
       $('#slides').slidesjs({
         width: 960,
