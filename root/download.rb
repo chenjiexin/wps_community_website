@@ -47,10 +47,10 @@ end
 
 cont = <<EOF
 #{html_header "Downloads"}
-<script>
+<script type="text/javascript">
   function onDownload(n)
   {
-    url = "/bin/st.rb?t=download&a=" + n.getAttribute("data-filename") + "&r=" + Math.random();
+    url = "/bin/st.rb?t=download&amp;a=" + n.getAttribute("data-filename") + "&amp;r=" + Math.random();
     a = new XMLHttpRequest();
     a.open("GET", url , false);
     a.send();
