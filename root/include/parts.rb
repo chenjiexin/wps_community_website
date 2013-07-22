@@ -32,6 +32,7 @@ def html_header title
       <span><a href="/forum">Forum</a></span>
       <span><a href="/faq.html">FAQ</a></span>
       <span><a href="/helpus.md">Help us</a></span>
+      <span><a href="/dev.html">Dev</a></span>
     </div>
   </div>
 </div>
