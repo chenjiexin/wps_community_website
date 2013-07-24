@@ -17,9 +17,9 @@ def html_mui_progress
   end
   sts.sort! {|x, y| -(x[3] <=> y[3])}
   sts.each do |c|
-    cont += "<div style='background: gray; position:relative; height: 1.2em;'>
+    cont += "<div style='background: gray; position:relative; height: 1.2em; margin-bottom: 1px;'>
     <div style='background: green; width: #{c[3] * 100}%; height: 100%; position: absolute; top: 0;'></div>
-    <div style='position: absolute; font-family: Monospace;'>#{c[0]}</div>
+    <div style='position: absolute; font-family: Monospace; color: white; margin: 2px 2px;'>#{c[0]}</div>
     </div>"
   end
   return cont
