@@ -42,17 +42,17 @@ cont = <<EOF
 #{html_header "Home"}
 <h1>Welcome to Kingsoft Office International Community</h1>
   <div id="slides">
-    <img src="/images/slide-wps.png" alt="Kingsoft Writer snapshot"/>
-    <img src="/images/slide-wpp.png" alt="Kingsoft Presentation snapshot"/>
-    <img src="/images/slide-et.png" alt="Kingsoft Spreadsheets snapshot"/>
+    <img src="/images/slide-wps.png" alt="Kingsoft Writer screenshot"/>
+    <img src="/images/slide-wpp.png" alt="Kingsoft Presentation screenshot"/>
+    <img src="/images/slide-et.png" alt="Kingsoft Spreadsheets screenshot"/>
     <a href="#" class="slidesjs-previous slidesjs-navigation"><img src="/images/left.png" alt="left arrow"/></a>
     <a href="#" class="slidesjs-next slidesjs-navigation"><img src="/images/right.png" alt="right arrow"/></a>
   </div>
   <div class="center">
-    Kingsoft Office is a simple, effective, powerful and comfortable office suite, which has been released in 1989. Now porting to Linux. <br/>
-    Let us do our best to make a best Linux Office Suite.
-    For <a href="http://www.ksosoft.com/downloads/windows.html" target="_blank">Windows</a>/<a href="http://www.ksosoft.com/downloads/android.html" target="_blank">Android</a>/<a href="http://www.ksosoft.com/downloads/ios.html" target="_blank">iOS</a>, 
-    click <a href="http://www.ksosoft.com/" target="_blank">here</a>, please.
+    Kingsoft Office is a simple, effective, powerful and comfortable office suite, which has been in release since 1989. Now porting to Linux. <br/>
+    Let us do our best to create the best Linux Office Suite.
+    We also have  versions for <a href="http://www.ksosoft.com/downloads/windows.html" target="_blank">Windows</a>, <a href="http://www.ksosoft.com/downloads/android.html" target="_blank">Android</a> and <a href="http://www.ksosoft.com/downloads/ios.html" target="_blank">iOS</a>, 
+    find out more <a href="http://www.ksosoft.com/" target="_blank">here</a>.
   </div>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
   <script src="js/jquery.slides.min.js" type="text/javascript"></script>
