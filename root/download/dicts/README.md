@@ -2,10 +2,13 @@
 Some installation package may come from the Internet, if we have violated your copyright, please let us know, we will remove from the site
 
 ## Spellcheck Zip Package Structure
-├── US
-│   ├── main(spellcheck dictionary description file)
-│   └── main(spellcheck dictionary file)
-│   └ Readme.txt(may be the License)
+----en-US
+	|
+	---- main.aff(spellcheck dictionary description file)
+	|
+	---- main.dic(spellcheck dictionary file)
+	|
+	---- Readme(may be the lisense)
 
 
 ## Installation
