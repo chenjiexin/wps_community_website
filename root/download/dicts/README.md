@@ -5,11 +5,11 @@ Some installation packages comes from the Internet, if we have violated your cop
 
 ## Spellcheck Zip Package Structure (take en-US for example)
 
-* en-US (Dictionary Language dir)
-
-** main.aff (Spellcheck dictionary description file)
-
-** main.dic (Spellcheck dictionary file)
+--en-US (Dictionary Language dir)
+|
+----main.aff (Spellcheck dictionary description file)
+|
+----main.dic (Spellcheck dictionary file)
 
 main.aff & main.dic must place inside Language dir (like en-US)
 
