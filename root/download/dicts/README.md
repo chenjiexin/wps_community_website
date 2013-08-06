@@ -1,12 +1,22 @@
 ## Declaration
-Some installation package may come from the Internet, if we have violated your copyright, please let us know, we will remove from the site
 
-## Spellcheck Zip Package Structure
-* en-US
-** main.aff(spellcheck dictionary description file)
-** main.dic(spellcheck dictionary file)
+Some installation packages comes from the Internet, if we have violated your copyright, please let us know, we will remove from the site as soon as possible.
+
+
+## Spellcheck Zip Package Structure (take en-US for example)
+
+* en-US (Dictionary Language dir)
+
+** main.aff (Spellcheck dictionary description file)
+
+** main.dic (Spellcheck dictionary file)
+
+main.aff & main.dic must place inside Language dir (like en-US)
+
 
 
 ## Installation
-1):Download The Spellcheck Zip Install Package, eg:en-US.zip
-2):Review --> Set Spellcheck Language --> Install, and choose en-US.zip
+
+1) (from web) Download The Spellcheck Zip Install Package, e.g.: en-US.zip
+
+2) (from WPS) Review --> Set Spellcheck Language --> Install, and choose en-US.zip
