@@ -7,7 +7,7 @@ whats_new: |
     Added: Pre-edit support. (Enhanced Korean and Japanese input support)
     Fixed: Cannot use native Open/Save Dialog in Mate desktop environment.
     Fixed: Cannot save to cifs file system.
-    Fixed: Cannot show user custom interface when using a custom skin.
+    Fixed: Cannot show user custom splash when using a custom skin.
     Fixed: Cannot add new words to custom dictionary.
     Fixed: Cannot use mouse wheel when using the shortcut to the main menu.
     Fixed: Some hyperlinks invalid in Kingsoft Presentation.
