@@ -1,9 +1,17 @@
+#!/usr/bin/env ruby
 require 'cgi'
-require 'include/parts.rb'
-require 'include/funcs.rb'
+
+$cgi = CGI.new
+
+require './include/parts.rb'
+require './include/funcs.rb'
 require 'yaml'
 
 lang_redirect 'zh', 'http://community.wps.cn/download/#alpha'
+
+if not $root2
+  $root2 = ".."
+end
 
 def html_version_item f
   cont = ""
@@ -39,7 +47,7 @@ def html_version_item f
 end
 
 def html_versions
-  files = Dir.glob($root2 + "/data/versions/*.yaml").sort{|a,b| -(File.basename(a).to_i <=> File.basename(b).to_i) }
+  files = Dir.glob($root2 + "/data/versions/**/*.yaml").sort{|a,b| -(File.basename(a).to_i <=> File.basename(b).to_i) }
   files.collect do |f|
     html_version_item f
   end.join "\n"

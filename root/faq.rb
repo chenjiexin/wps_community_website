@@ -1,10 +1,15 @@
+#!/usr/bin/env ruby
 require 'cgi'
-require 'include/parts.rb'
+require './include/parts.rb'
 require 'yaml'
 require 'zlib'
 
 def get_ref_name q
   Zlib::crc32(q).to_s 16
+end
+
+if not $root2
+  $root2 = ".."
 end
 
 def html_faq
@@ -28,6 +33,7 @@ Cannot find what you need? <a href="/forum">Try forum here</a>.
 #{html_tail}
 EOF
 
-$cgi.out {
+cgi = CGI.new
+cgi.out {
   cont
 }

@@ -1,5 +1,11 @@
+#!/usr/bin/env ruby
 require 'cgi'
-require 'include/parts.rb'
+require './include/parts.rb'
+
+
+if not $root2
+  $root2 = ".."
+end
 
 def html_mui_progress
   fpath = $root2 + "/var/wps_mui.st"
@@ -45,6 +51,7 @@ cont = <<EOF
 #{html_tail}
 EOF
 
-$cgi.out {
+cgi = CGI.new
+cgi.out {
   cont
 }
