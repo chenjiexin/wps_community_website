@@ -1,10 +1,10 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby1.8
 require "md5"
 puts "Content-Type: text/plain"
 puts
 
-$file_path = "/var/www/nginx-wps-community/var/wps_mui/"
-$set_path = "/var/www/nginx-wps-community/var/set/"
+$file_path = "../../../var/wps_mui/"
+$set_path = "../../../var/set/"
 
 if not File.exists? $file_path
   puts "not exist"
@@ -43,16 +43,35 @@ def get_md5_set file_name
   return MD5.hexdigest(File.read($set_path + file_name))
 end
 
+#检测配置信息是否存在  不存在的话新建
+def check_set_file
+  dirs = Dir.entries($file_path).sort()
+  dirs.each do |dir| 
+    if(dir != "." && dir != ".." && dir != ".git" && dir != ".gitignore" && dir != "each_locale" && dir != "CMakeLists.txt" && dir != "Makefile" && dir != "README.md")
+      write_dir_md5(dir)
+    end
+  end
+end
+
+if not File.exists? $set_path
+  Dir.mkdir($set_path)
+  dirs = Dir.entries($file_path).sort()
+  dirs.each do |dir|
+   if(dir != "." && dir != ".." && dir != ".git" && dir != ".gitignore" && dir != "each_locale" && dir != "CMakeLists.txt" && dir != "Makefile" && dir != "README.md")
+      write_dir_md5(dir)
+   end
+  end
+end
 #比较本次和上一次的指纹信息
 dirs = Dir.entries($file_path).sort()
 dirs.each do |dir|
-  if(dir != "." && dir != ".." && dir != ".git" && dir != ".gitignore" && dir != "each_locale")
+  if(dir != "." && dir != ".." && dir != ".git" && dir != ".gitignore" && dir != "each_locale" && dir != "CMakeLists.txt" && dir != "Makefile" && dir != "README.md")
     if(get_cur_md5(dir) != get_md5_set(dir))
      #编译 安装 打包
       puts dir
       `cd #{$file_path + dir};   make install`
       if ( 0 != $?.to_i)
-   	system("/var/www/nginx-wps-community/root/bin/i18n/send.rb",dir)
+       	system("/var/www/nginx-wps-community/root/bin/i18n/send.rb",dir)
       end
       `cd ~/.kingsoft/mui; zip -r #{dir}.zip #{dir + "/"}; mv *.zip /var/www/nginx-wps-community/root/download/mui`
     end
