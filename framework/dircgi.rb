@@ -8,7 +8,7 @@ $dirpath = ENV['DOCUMENT_ROOT'] + ENV['DOCUMENT_URI']
 def html_readme
   cont = ""
   if File.exist?($dirpath + "/README.md")
-    cont = `markdown #{$dirpath}"README.md" 2>&1`
+    cont = `markdown #{$dirpath}"/README.md" 2>&1`
   end
   return cont
 end
