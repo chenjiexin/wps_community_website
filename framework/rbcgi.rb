@@ -23,4 +23,3 @@ rescue Exception => e
     puts x
   end
 end
-  

@@ -1,5 +1,6 @@
+#!/usr/bin/env ruby
 require 'cgi'
-require 'include/parts.rb'
+require './include/parts.rb'
 require 'yaml'
 
 cont = <<EOF
@@ -10,6 +11,7 @@ todo...
 #{html_tail}
 EOF
 
-$cgi.out {
+cgi = CGI.new
+cgi.out {
   cont
 }

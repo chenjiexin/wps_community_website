@@ -1,20 +1,15 @@
 #!/usr/bin/env ruby
 require 'cgi'
 
-if ARGV.size == 0
-  return 1
-end
-
 $cgi = CGI.new
-$root = ENV['DOCUMENT_ROOT'] ? ENV['DOCUMENT_ROOT'] : Dir.pwd
-$LOAD_PATH << $root
+$mdfile = ENV['DOCUMENT_ROOT'] + ENV['DOCUMENT_URI']
 
-require 'include/parts.rb'
+require '../root/include/parts.rb'
 
 begin
-  cont = `markdown "#{ARGV[0]}" 2>&1`
+  cont = `markdown "#{$mdfile}" 2>&1`
   $cgi.out do
-    html_header(ENV["SCRIPT_NAME"]) + 
+    html_header(ENV["DOCUMENT_URI"]) +
         "<div class='markdown'>" + cont + "</div>" +
         html_tail
   end
@@ -27,5 +22,4 @@ rescue
     puts x
   end
 end
-
 

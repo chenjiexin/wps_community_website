@@ -1,5 +1,10 @@
+#!/usr/bin/env ruby
 require 'cgi'
-require 'include/parts.rb'
+require './include/parts.rb'
+cgi = CGI.new
+if not $root2
+  $root2 = ".."
+end
 
 NewsInfo = Struct.new(:title, :content)
 
@@ -76,6 +81,6 @@ cont = <<EOF
 #{html_tail}
 EOF
 
-$cgi.out {
+cgi.out {
   cont
 }
