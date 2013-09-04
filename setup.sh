@@ -65,9 +65,17 @@ rm -rf "/etc/nginx/sites-enabled/default"
 chown -R ${x_user}:${x_group} "${x_root}"
 
 # start server
-/etc/init.d/fcgiwrap restart
-/etc/init.d/php5-fpm restart
-/etc/init.d/nginx restart
+if ! /etc/init.d/fcgiwrap status; then
+	/etc/init.d/fcgiwrap start
+fi
+if ! /etc/init.d/php5-fpm status; then
+	/etc/init.d/php5-fpm start
+fi
+if ! /etc/init.d/nginx status; then
+	/etc/init.d/nginx start
+else
+	/etc/init.d/nginx reload
+fi
 
 echo "Setup completed!"
 echo "Hint: Read setup/forum/README.md to configure forum"
