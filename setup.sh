@@ -61,6 +61,13 @@ rm -rf "/etc/nginx/sites-enabled/default"
 #update-rc.d lighttpd-wps-community start 09 2 3 4 5 . stop 09 0 1 6 .
 #update-rc.d lighttpd-wps-community enable
 
+# make 404.log if not
+
+if [ ! -f "./log/404.log" ]; then
+	touch "./log/404.log"
+fi
+chmod 666 "./log/404.log"
+
 # change own of /var/www
 chown -R ${x_user}:${x_group} "${x_root}"
 
