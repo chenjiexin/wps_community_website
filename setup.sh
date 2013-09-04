@@ -51,11 +51,13 @@ update-rc.d lighttpd disable
 # create own serve
 update-rc.d -f lighttpd-wps-community remove
 config_file "setup/nginx.conf" "/etc/nginx/sites-available/wps_community"
-if [ ! -d "/etc/nginx/sites-enabled/wps_community" ]; then
+config_file "setup/php5_fpm.conf" "/etc/php5/fpm/pool.d/wps_community.conf"
+if [ ! -h "/etc/nginx/sites-enabled/wps_community" ]; then
     rm -rf "/etc/nginx/sites-enabled/wps_community"
     ln -s "/etc/nginx/sites-available/wps_community" "/etc/nginx/sites-enabled/wps_community"
 fi
 rm -rf "/etc/nginx/sites-enabled/default"
+rm -rf "/etc/php5/fpm/pool.d/www.conf"
 #config_file "setup/lighttpd.init" "/etc/init.d/lighttpd-wps-community"
 #config_file "setup/lighttpd.conf" "config/lighttpd.conf"
 #update-rc.d lighttpd-wps-community start 09 2 3 4 5 . stop 09 0 1 6 .
@@ -77,6 +79,8 @@ if ! /etc/init.d/fcgiwrap status; then
 fi
 if ! /etc/init.d/php5-fpm status; then
 	/etc/init.d/php5-fpm start
+else
+	/etc/init.d/php5-fpm reload
 fi
 if ! /etc/init.d/nginx status; then
 	/etc/init.d/nginx start
