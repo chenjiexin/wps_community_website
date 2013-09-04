@@ -15,7 +15,7 @@ def html_readme
 end
 
 def html_path
-  cont = "<h1>\> <a href=\"..\">HomePage </a> \> <a href=\".\">download</a>"
+  cont = "<h1>\> <a href=\"..\">Homepage </a> \> <a href=\".\">download</a>"
   if ("/download/" != $filepath)
     left = $filepath.gsub("/download/","")
     cont += " \> <a href=\"./#{left}\">#{left}</a>"
