@@ -13,12 +13,20 @@ function rewrite(path)
 	lighty.env["physical.path"] = path
 end
 
+function redirect(path)
+	lighty.header["Location"] = path
+	return 301
+end
+
 request_uri = lighty.env["physical.path"]
 document_root = lighty.env["physical.doc-root"]
+path_raw = lighty.env["uri.path-raw"]
 request_uri = string.gsub(request_uri, "/$", "")
 
 if is_dir(request_uri) then
-	if is_file(request_uri .. "/index.html") then
+	if not string.find(path_raw, "/$") then
+		return redirect(lighty.env["uri.scheme"] .. "://" .. lighty.env["uri.authority"] .. path_raw .. "/")
+	elseif is_file(request_uri .. "/index.html") then
 		rewrite(request_uri .. "/index.html")
 		return
 	elseif is_file(request_uri .. "/index.htm") then
