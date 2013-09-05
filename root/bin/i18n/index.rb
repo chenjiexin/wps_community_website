@@ -1,5 +1,7 @@
-#!/usr/bin/env ruby1.8
+#!/usr/bin/env ruby
+
 require "md5"
+
 puts "Content-Type: text/plain"
 puts
 

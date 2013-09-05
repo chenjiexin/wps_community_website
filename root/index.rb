@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 require 'cgi'
 require './include/parts.rb'
 cgi = CGI.new
