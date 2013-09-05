@@ -7,26 +7,29 @@ $dirpath = ENV['DOCUMENT_ROOT'] + ENV['REQUEST_URI']
 $dirpath.gsub!('//', '/')
 $filepath = ENV['REQUEST_URI']
 $home = ENV['DOCUMENT_ROOT']
+
 def html_readme
   cont = ""
   if File.exist?($dirpath + "/README.md")
     cont = `markdown #{$dirpath}"/README.md" 2>&1`
+    cont += "<br/>"
   end
   return cont
 end
 
 def html_path
-  cont = "<h1>\> <a href=\"..\">Homepage </a> \> <a href=\".\">download</a>"
-  if ("/download/" != $filepath)
-    left = $filepath.gsub("/download/","")
-    cont += " \> <a href=\"./#{left}\">#{left}</a>"
+  cont = "<h1>"
+  x = $filepath.split '/'
+  x.shift
+  x.each_index do |i|
+    cont += " &gt; <a href='/#{x[0..i].join '/'}/'>#{x[i]}</a>"
   end
   cont += "</h1>"
   return cont
 end
 
 def html_sub_dir
-    cont = ""
+  cont = ""
   x = Dir.entries($dirpath).each.to_a.sort do |a, b| a.to_s <=> b.to_s end
   cont += "<div class=\"mui_item\">"
   cont += "<table summary=\"Directory Listing\" cellpadding=\"0\" cellspacing=\"10\" border=\"0\" width=\"1000\">"
@@ -47,15 +50,10 @@ end
 
 
 cont = <<EOF
-#{html_header "Development"}
-
+#{html_header $filepath}
 #{html_path}
-
 #{html_readme}
-<p>
-<h2> File or Dirs underflow</h2>
 #{html_sub_dir}
-
 #{html_tail}
 EOF
 
