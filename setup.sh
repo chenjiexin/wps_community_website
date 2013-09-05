@@ -25,46 +25,61 @@ function config_file()
     chmod --reference="$1" "$2"
 }
 
-x_user="www-data"
-x_group="www-data"
-x_root="/var/www"
+function stop_service()
+{
+	if [ -x /etc/init.d/$1 ]; then
+		/etc/init.d/$1 stop
+	fi
+}
+
+function remove_service()
+{
+	stop_service "$@"
+	if [ -f /etc/init.d/$1 ]; then
+		update-rc.d $1 disable
+	fi
+}
+
+function start_service()
+{
+	if /etc/init.d/$1 status; then
+		/etc/init.d/$1 reload
+	else
+		/etc/init.d/$1 start
+	fi
+}
+
+x_root="$PWD"
+if [ "$x_root" == "/var/www" ]; then
+	x_user="www-data"
+	x_group="www-data"
+else
+	x_user="$SUDO_USER"
+	x_group="$SUDO_USER"
+fi
 [ -f "config/setup.conf" ] && source config/setup.conf
 
 # check root directory
 [ "x$(pwd)" == "x${x_root}" ] || die "website must be installed to ${x_root}"
 
 # check required software
-which nginx || die "can not found nginx"
-which fcgiwrap || die "can not found fcgiwrap"
-which php5-fpm || die "can not found php5-fpm"
+which lighttpd || die "can not found nginx"
 which ruby || die "can not found ruby"
 which php5-cgi || die "can not found php5-cgi"
+which markdown || die "can not found markdown"
 echo "<?php curl_init() ?>" | php5-cgi || die "can not found php5-curl"
 echo "<?php mysql_connect() ?>" | php5-cgi || die "can not found php5-mysql"
 
 # stop system's http serve
-/etc/init.d/lighttpd-wps-community stop
-/etc/init.d/lighttpd stop
-update-rc.d lighttpd disable
-/etc/init.d/nginx stop
+remove_service lighttpd-wps-community
+remove_service nginx
 
 # create own serve
-update-rc.d -f lighttpd-wps-community remove
-config_file "setup/nginx.conf" "/etc/nginx/sites-available/wps_community"
-config_file "setup/php5_fpm.conf" "/etc/php5/fpm/pool.d/wps_community.conf"
-if [ ! -h "/etc/nginx/sites-enabled/wps_community" ]; then
-    rm -rf "/etc/nginx/sites-enabled/wps_community"
-    ln -s "/etc/nginx/sites-available/wps_community" "/etc/nginx/sites-enabled/wps_community"
-fi
-rm -rf "/etc/nginx/sites-enabled/default"
-rm -rf "/etc/php5/fpm/pool.d/www.conf"
-#config_file "setup/lighttpd.init" "/etc/init.d/lighttpd-wps-community"
-#config_file "setup/lighttpd.conf" "config/lighttpd.conf"
-#update-rc.d lighttpd-wps-community start 09 2 3 4 5 . stop 09 0 1 6 .
-#update-rc.d lighttpd-wps-community enable
+config_file "setup/lighttpd.conf" "/etc/lighttpd/lighttpd.conf"
+config_file "setup/lighttpd-mimetype.conf" "/etc/lighttpd/lighttpd-mimetype.conf"
+update-rc.d lighttpd start 09 2 3 4 5 . stop 09 0 1 6 .
 
 # make 404.log if not
-
 if [ ! -f "./log/404.log" ]; then
 	touch "./log/404.log"
 fi
@@ -73,20 +88,8 @@ chmod 666 "./log/404.log"
 # change own of /var/www
 chown -R ${x_user}:${x_group} "${x_root}"
 
-# start server
-if ! /etc/init.d/fcgiwrap status; then
-	/etc/init.d/fcgiwrap start
-fi
-if ! /etc/init.d/php5-fpm status; then
-	/etc/init.d/php5-fpm start
-else
-	/etc/init.d/php5-fpm reload
-fi
-if ! /etc/init.d/nginx status; then
-	/etc/init.d/nginx start
-else
-	/etc/init.d/nginx reload
-fi
+# start service
+start_service lighttpd
 
 echo "Setup completed!"
 echo "Hint: Read setup/forum/README.md to configure forum"

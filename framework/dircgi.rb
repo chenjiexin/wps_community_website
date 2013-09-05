@@ -3,8 +3,9 @@
 require 'cgi'
 require '../root/include/parts.rb'
 
-$dirpath = ENV['DOCUMENT_ROOT'] + ENV['DOCUMENT_URI']
-$filepath = ENV['DOCUMENT_URI']
+$dirpath = ENV['DOCUMENT_ROOT'] + ENV['REQUEST_URI']
+$dirpath.gsub!('//', '/')
+$filepath = ENV['REQUEST_URI']
 $home = ENV['DOCUMENT_ROOT']
 def html_readme
   cont = ""
