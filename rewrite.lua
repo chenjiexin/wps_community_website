@@ -18,11 +18,23 @@ function redirect(path)
 	return 301
 end
 
+-- ininialize variants
+domain = lighty.env["uri.authority"]
 request_uri = lighty.env["physical.path"]
 document_root = lighty.env["physical.doc-root"]
 path_raw = lighty.env["uri.path-raw"]
 request_uri = string.gsub(request_uri, "/$", "")
 
+-- domain redirect
+domain = string.gsub(domain, "kso[-]community", "wps-community")
+domain = string.gsub(domain, "wps[-]community[.]com", "wps-community.org")
+domain = string.gsub(domain, "www[.]", "")
+if domain ~= lighty.env["uri.authority"] then
+	print(domain)
+	return redirect(lighty.env["uri.scheme"] .. "://" .. domain .. path_raw)
+end
+
+-- deal directory
 if is_dir(request_uri) then
 	if not string.find(path_raw, "/$") then
 		return redirect(lighty.env["uri.scheme"] .. "://" .. lighty.env["uri.authority"] .. path_raw .. "/")
@@ -44,6 +56,7 @@ if is_dir(request_uri) then
 	end
 end
 
+-- rewrite if not file
 if not is_file(request_uri) then
 	x = string.gsub(request_uri, ".html$", ".rb")
 	if is_file(x) then
