@@ -29,8 +29,9 @@ request_uri = string.gsub(request_uri, "/$", "")
 domain = string.gsub(domain, "kso[-]community", "wps-community")
 domain = string.gsub(domain, "wps[-]community[.]com", "wps-community.org")
 domain = string.gsub(domain, "www[.]", "")
+
 if domain ~= lighty.env["uri.authority"] then
-	print(domain)
+	print("redirect " .. lighty.env["uri.authority"] .. " -> " .. domain)
 	return redirect(lighty.env["uri.scheme"] .. "://" .. domain .. path_raw)
 end
 
