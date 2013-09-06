@@ -39,13 +39,19 @@ alpha_version_num = get_alpha_version_info(get_last_alpha_version.to_s);
 beta_version_num = get_beta_version_info(get_last_beta_version.to_s);
 
 puts alpha_version_num["version"] +"/" + beta_version_num["version"]
-#puts version_num["linux_version_short"]
-#puts get_last_version
 
-#cmd = $cgi['c']
+qurey = ENV['QUERY_STRING']
 
-#if cmd == "get_last_version"
-# puts get_last_version
-#elsif cmd == "get_version_info"
-# puts get_version_info(get_last_version.to_s)
-#end
+qurey = qurey.gsub("&", " ")
+#去掉请求里面的空格
+qurey = qurey.gsub(/\%[0-9]{2}/, " ")
+
+logpath = $root2 + "/log/uselog.log"
+
+if qurey == ""
+else
+  open(logpath, "a") do |line|
+    line.puts Time.now.strftime("%F %T %z") + " " + qurey 
+  end
+end
+
