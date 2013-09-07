@@ -43,8 +43,7 @@ puts alpha_version_num["version"] +"/" + beta_version_num["version"]
 qurey = ENV['QUERY_STRING']
 
 qurey = qurey.gsub("&", " ")
-#去掉请求里面的空格
-qurey = qurey.gsub(/\%[0-9]{2}/, " ")
+qurey = qurey.gsub(/\%[0-9]{2}/, "")
 
 logpath = $root2 + "/log/uselog.log"
 
