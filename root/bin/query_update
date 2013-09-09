@@ -39,7 +39,7 @@ end
 alpha_version_num = get_alpha_version_info(get_last_alpha_version.to_s);
 beta_version_num = get_beta_version_info(get_last_beta_version.to_s);
 
-puts alpha_version_num["version"] +"/" + beta_version_num["version"]
+puts alpha_version_num["version"] +"/" + beta_version_num["version"] + "/" + alpha_version_num["linux_version"] +"/" + beta_version_num["linux_version"]
 
 cgi = CGI.new
 keys = cgi.keys
