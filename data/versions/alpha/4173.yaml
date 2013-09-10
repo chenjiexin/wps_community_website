@@ -4,7 +4,7 @@ linux_version_short: a12
 full_name: Kingsoft Office for Linux Alpha12
 whats_new: |
     Added: Saving as Microsoft Word 2007/2010 format files in Kingsoft Writer
-    Added: Reading and saving Rich Text Format files in Kingsoft Writer
+    Added: Reading and saving as Rich Text Format files in Kingsoft Writer
     Added: Reading Microsoft Word 2003 XML files in Kingsoft Writer
     Added: Added solver function in Kingsoft Spreadsheets
     Added: Supported date and number formats in different locales in Kingsoft Spreadsheets
@@ -15,7 +15,7 @@ whats_new: |
     Added: Added fallback language support
     Added: Added RTL user interface layout support(Experimental)
     Fixed: Cannot activate main window when user double click files
-    Fixed: Cannot saving Microsoft Excel 2007/2010 files format on CIFS file system
+    Fixed: Cannot saving as Microsoft Excel 2007/2010 files format on CIFS file system
     Fixed: Missing pictures when reading Microsoft Word 2007/2010 files format in Kingsoft Writer
 addresses:
     - type: deb
