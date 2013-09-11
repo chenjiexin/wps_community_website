@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require "md5"
+require 'digest/md5'
 
 puts "Content-Type: text/plain"
 puts
@@ -22,7 +22,7 @@ def write_dir_md5 dir_path
   md5_set = File.open($set_path + dir_path, "w")
   files.each do |file|
     if (File.file?(file))
-     md5_set.puts(MD5.hexdigest(File.read(file)))
+     md5_set.puts(Digest::MD5.hexdigest(File.read(file)))
     end
   end
 end
@@ -33,23 +33,23 @@ def get_cur_md5 dir
   temp_file = File.open($set_path + "temp", "w")
   files.each do |file|
     if (File.file?(file))
-     temp_file.puts(MD5.hexdigest(File.read(file)))
+     temp_file.puts(Digest::MD5.hexdigest(File.read(file)))
     end 
   end
   temp_file.close()
-  return MD5.hexdigest(File.read($set_path + "temp"))
+  return Digest::MD5.hexdigest(File.read($set_path + "temp"))
 end
 
 #读取上一次的指纹信息
 def get_md5_set file_name
-  return MD5.hexdigest(File.read($set_path + file_name))
+  return Digest::MD5.hexdigest(File.read($set_path + file_name))
 end
 
 #检测配置信息是否存在  不存在的话新建
 def check_set_file
   dirs = Dir.entries($file_path).sort()
   dirs.each do |dir| 
-    if(dir != "." && dir != ".." && dir != ".git" && dir != ".gitignore" && dir != "each_locale" && dir != "CMakeLists.txt" && dir != "Makefile" && dir != "README.md")
+    if(dir != "." && dir != ".." && dir != ".git" && dir != "bin" && dir != ".gitignore" && dir != "each_locale" && dir != "CMakeLists.txt" && dir != "Makefile" && dir != "README.md" && dir != "sample" && dir != "default")
       write_dir_md5(dir)
     end
   end
@@ -59,23 +59,23 @@ if not File.exists? $set_path
   Dir.mkdir($set_path)
   dirs = Dir.entries($file_path).sort()
   dirs.each do |dir|
-   if(dir != "." && dir != ".." && dir != ".git" && dir != ".gitignore" && dir != "each_locale" && dir != "CMakeLists.txt" && dir != "Makefile" && dir != "README.md")
-      write_dir_md5(dir)
+    if(dir != "." && dir != ".." && dir != ".git" && dir != "bin" && dir != ".gitignore" && dir != "each_locale" && dir != "CMakeLists.txt" && dir != "Makefile" && dir != "README.md" && dir != "sample" && dir != "default")  
+     write_dir_md5(dir)
    end
   end
 end
 #比较本次和上一次的指纹信息
 dirs = Dir.entries($file_path).sort()
 dirs.each do |dir|
-  if(dir != "." && dir != ".." && dir != ".git" && dir != ".gitignore" && dir != "each_locale" && dir != "CMakeLists.txt" && dir != "Makefile" && dir != "README.md")
+  if(dir != "." && dir != ".." && dir != ".git" && dir != "bin" && dir != ".gitignore" && dir != "each_locale" && dir != "CMakeLists.txt" && dir != "Makefile" && dir != "README.md" && dir != "sample" && dir != "default")
     if(get_cur_md5(dir) != get_md5_set(dir))
      #编译 安装 打包
       puts dir
       `cd #{$file_path + dir};   make install`
       if ( 0 != $?.to_i)
-       	system("/var/www/nginx-wps-community/root/bin/i18n/send.rb",dir)
+       	system("/var/www/root/bin/i18n/send.rb",dir)
       end
-      `cd ~/.kingsoft/mui; zip -r #{dir}.zip #{dir + "/"}; mv *.zip /var/www/nginx-wps-community/root/download/mui`
+      `cd ~/.kingsoft/mui; zip -r #{dir}.zip #{dir + "/"}; mv *.zip /var/www/root/download/mui`
     end
   # 写回配置i
    write_dir_md5(dir)
