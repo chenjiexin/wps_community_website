@@ -2,8 +2,8 @@
 // phpBB 3.0.x auto-generated configuration file
 // Do not change anything in this file!
 $dbms = 'mysqli';
-$dbhost = '';
-$dbport = '';
+$dbhost = '127.0.0.1';
+$dbport = '3306';
 $dbname = 'forum';
 $dbuser = 'forum';
 $dbpasswd = 'forum';

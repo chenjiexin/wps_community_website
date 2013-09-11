@@ -1,0 +1,30 @@
+version: 9.1.0.4173
+linux_version: Alpha12
+linux_version_short: a12
+full_name: Kingsoft Office for Linux Alpha12
+whats_new: |
+    Added: Saving as Microsoft Word 2007/2010 format files in Kingsoft Writer
+    Added: Reading and saving as Rich Text Format files in Kingsoft Writer
+    Added: Reading Microsoft Word 2003 XML files in Kingsoft Writer
+    Added: Added solver function in Kingsoft Spreadsheets
+    Added: Supported date and number formats in different locales in Kingsoft Spreadsheets
+    Added: Added owner-draw title-bar function and switching user interface freely between system style and owner-draw style
+    Added: Optimized the clipboard interaction between different programs
+    Added: Supported installing internationalization resource to user directory
+    Added: Supported geting the user name from the system automatically when user name is not set
+    Added: Added fallback language support
+    Added: Added RTL user interface layout support(Experimental)
+    Fixed: Cannot activate main window when user double click files
+    Fixed: Cannot saving as Microsoft Excel 2007/2010 files format on CIFS file system
+    Fixed: Missing pictures when reading Microsoft Word 2007/2010 files format in Kingsoft Writer
+addresses:
+    - type: deb
+      address: http://wdl.cache.ijinshan.com/wps/download/Linux/unstable/kingsoft-office_9.1.0.4173~a12_i386.deb
+      sha1sum: 2769cf7dda2ce28ef5ab60d230f5876e080c8ceb
+    - type: rpm
+      address: http://wdl.cache.ijinshan.com/wps/download/Linux/unstable/kingsoft-office-9.1.0.4173-0.1.a12.i686.rpm
+      sha1sum: 80a5cf55cc15ee6685fc0418dea425fff7cce539
+    - type: tar.xz
+      address: http://wdl.cache.ijinshan.com/wps/download/Linux/unstable/kingsoft-office_9.1.0.4173~a12_x86.tar.xz
+      sha1sum: 95507eb7375bca519af6b71c58b51ab1aaf28c0d
+
