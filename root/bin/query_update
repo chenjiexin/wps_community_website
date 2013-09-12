@@ -14,6 +14,22 @@ $version_data_dir = $root2 + "/data/versions"
 $beta_dir = $version_data_dir + "/beta"
 $alpha_dir = $version_data_dir + "/alpha"
 
+def get_last_version
+  x = Dir.glob($version_data_dir + "/**/*.yaml").sort do |a, b|
+    -(File.basename(a).to_i <=> File.basename(b).to_i)
+  end
+    return File.basename(x.first).to_i
+end
+
+def get_yaml_file num
+  if (File.exist?($alpha_dir + "/" + num +".yaml"))
+    y = YAML.load_file($alpha_dir + "/" + num + ".yaml" )
+  else
+    y = YAML.load_file($beta_dir + "/" + num + ".yaml")
+  end
+  return y
+end
+
 def get_last_beta_version
   x = Dir.new($beta_dir).each.to_a.sort do |a, b| a.to_i <=> b.to_i end
   return x.last.to_i
@@ -36,10 +52,11 @@ end
 
 
 
-alpha_version_num = get_alpha_version_info(get_last_alpha_version.to_s);
-beta_version_num = get_beta_version_info(get_last_beta_version.to_s);
+#alpha_version_num = get_alpha_version_info(get_last_alpha_version.to_s);
+#beta_version_num = get_beta_version_info(get_last_beta_version.to_s);
 
-puts alpha_version_num["version"] +"/" + beta_version_num["version"] + "/" + alpha_version_num["linux_version"] +"/" + beta_version_num["linux_version"]
+print get_yaml_file(get_last_version.to_s)["version"] + "/" + get_yaml_file(get_last_version.to_s)["linux_version"]
+#print alpha_version_num["version"] +"/" + beta_version_num["version"] + "/" + alpha_version_num["linux_version"] +"/" + beta_version_num["linux_version"]
 
 cgi = CGI.new
 keys = cgi.keys
