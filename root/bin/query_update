@@ -59,7 +59,7 @@ print get_yaml_file(get_last_version.to_s)["version"] + "/" + get_yaml_file(get_
 #print alpha_version_num["version"] +"/" + beta_version_num["version"] + "/" + alpha_version_num["linux_version"] +"/" + beta_version_num["linux_version"]
 
 cgi = CGI.new
-keys = cgi.keys
+keys = cgi.keys.sort
 qurey = ""
 
 keys.each do |key|
@@ -74,7 +74,7 @@ logpath = $root2 + "/log/wpsuse.log"
 if qurey == ""
 else
   open(logpath, "a") do |line|
-    line.puts Time.now.strftime("%F %T %z") + qurey + " IP=" + ENV['REMOTE_ADDR'] 
+    line.puts Time.now.strftime("%F %T %z") + qurey + " ip=" + ENV['REMOTE_ADDR'] 
   end
 end
 
