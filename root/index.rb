@@ -55,10 +55,13 @@ cont = <<EOF
     <a href="#" class="slidesjs-next slidesjs-navigation"><img src="/images/right.png" alt="right arrow"/></a>
   </div>
   <div class="center">
-    Kingsoft Office is a simple, effective, powerful and comfortable office suite, which has been in release since 1989. Now porting to Linux. <br/>
-    Let us do our best to create the best Linux Office Suite.
-    We also have  versions for <a href="http://www.ksosoft.com/downloads/windows.html" target="_blank">Windows</a>, <a href="http://www.ksosoft.com/downloads/android.html" target="_blank">Android</a> and <a href="http://www.ksosoft.com/downloads/ios.html" target="_blank">iOS</a>, 
-    find out more <a href="http://www.ksosoft.com/" target="_blank">here</a>.
+    Kingsoft Office is a simple, powerful office suite with a confortable interface. 
+    Since 1988 Kingsoft has been thought of as one of the best office suites available, 
+    but there is no Linux version! Help us create the best Linux Office Suite.
+    We're also working on versions for <a href="http://www.ksosoft.com/downloads/windows.html" target="_blank">Windows</a>, 
+    <a href="http://www.ksosoft.com/downloads/android.html" target="_blank">Android</a> and 
+    <a href="http://www.ksosoft.com/downloads/ios.html" target="_blank">iOS</a>, 
+    <a href="http://www.ksosoft.com/" target="_blank">find out more here</a>.
   </div>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
   <script src="js/jquery.slides.min.js" type="text/javascript"></script>
