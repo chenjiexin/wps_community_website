@@ -1,6 +1,6 @@
 - Q: Why does my formula show incorrectly?
   A: |
-    formula is made of mostly symbols, KSO does not carry the copyrighted fonts necessary to show these symbols,
+    Formula is made of mostly symbols, KSO does not carry the copyrighted fonts necessary to show these symbols,
     such as symbol, wingdings, webdings... You can get the fonts yourself <a href="/download/fonts">here</a>.
 - Q: Missing fonts on startup?
   A: See above. ^_^
