@@ -71,8 +71,8 @@ echo "<?php curl_init() ?>" | php5-cgi || die "can not found php5-curl"
 echo "<?php mysql_connect() ?>" | php5-cgi || die "can not found php5-mysql"
 
 # stop system's http serve
-remove_service lighttpd-wps-community
-remove_service nginx
+# remove_service lighttpd-wps-community
+# remove_service nginx
 
 # create own serve
 config_file "setup/lighttpd.conf" "/etc/lighttpd/lighttpd.conf"
