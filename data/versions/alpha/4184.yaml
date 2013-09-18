@@ -11,7 +11,7 @@ whats_new: |
     Fixed: Crash when playing special video in Kingsoft Presentation.
     Fixed: Crash when using searchb function in Kingsoft Spreadsheets.
 release_notes: |
-    In this version, application settingss merged into a single file.
+    In this version, application settings merged into a single file.
     If you want keep the old settings, we provide a simple script. <a href="http://wps-community.org/download/tools/wps_merge_old_conf.sh">wps_merge_old_conf.sh</a>
 addresses:
     - type: deb
