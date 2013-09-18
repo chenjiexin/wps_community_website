@@ -3,7 +3,7 @@ linux_version: Alpha12 Patch1
 linux_version_short: a12p1
 full_name: Kingsoft Office for Linux Alpha12 Patch1
 whats_new: |
-    Added: Update notify.
+    Added: Upgrade notice.
     Fixed: Dirty flag update error in Kingsoft Presentation.
     Fixed: Spelling recognition error when user add multiple custom dictionaries.
     Fixed: The option of shape right margin distance from text cannot work in Kingsoft Writer.
