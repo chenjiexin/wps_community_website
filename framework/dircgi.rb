@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
 require 'cgi'
-require '../root/include/parts.rb'
+require_relative 'libraries/dirs.rb'
+require 'template/overall.rb'
 
 $dirpath = ENV['DOCUMENT_ROOT'] + ENV['REQUEST_URI']
 $dirpath.gsub!('//', '/')
@@ -37,7 +38,7 @@ def html_sub_dir
   x.collect do |a|
     if (a != '.' && a != '..' && a != 'README.md')
       if (FileTest.directory?($dirpath + "/" +a))
-        cont += "<tr><td class=\"n\"><a href=\"#{a}\">#{a}</a></td> <td class=\"m\">Click to see the last modified time</td></tr>"
+        cont += "<tr><td class=\"n\"><a href=\"#{a}/\">#{a}/</a></td> <td class=\"m\">#{File.mtime($dirpath + "/" +a)}</td></tr>"
       else 
         cont += "<tr><td class=\"n\"><a href=\"#{$filepath+"/" +a}\">#{a}</a></td> <td class=\"m\">#{File.mtime($dirpath + "/" +a)}</td></tr>"
       end
