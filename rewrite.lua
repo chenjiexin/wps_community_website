@@ -26,12 +26,13 @@ path_raw = lighty.env["uri.path-raw"]
 request_uri = string.gsub(request_uri, "/$", "")
 
 -- domain redirect
-domain = string.gsub(domain, "kso[-]community", "wps-community")
-domain = string.gsub(domain, "wps[-]community[.]com", "wps-community.org")
-domain = string.gsub(domain, "www[.]", "")
+if domain then
+	domain = string.gsub(domain, "kso[-]community", "wps-community")
+	domain = string.gsub(domain, "wps[-]community[.]com", "wps-community.org")
+	domain = string.gsub(domain, "www[.]wps[-]community[.]org", "wps-community.org")
+end
 
 if domain ~= lighty.env["uri.authority"] then
-	print("redirect " .. lighty.env["uri.authority"] .. " -> " .. domain)
 	return redirect(lighty.env["uri.scheme"] .. "://" .. domain .. path_raw)
 end
 
