@@ -1,15 +1,11 @@
 #!/usr/bin/env ruby
 
 require 'cgi'
-require './include/parts.rb'
-
-
-if not $root2
-  $root2 = ".."
-end
+require 'template/overall.rb'
+require 'libraries/dirs.rb'
 
 def html_mui_progress
-  fpath = $root2 + "/var/wps_mui.st"
+  fpath = VAR_DIR + "/wps_mui.st"
   if not File.exists? fpath
     return
   end
@@ -52,7 +48,6 @@ cont = <<EOF
 #{html_tail}
 EOF
 
-cgi = CGI.new
-cgi.out {
+CGI.new.out {
   cont
 }
