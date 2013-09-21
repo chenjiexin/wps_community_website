@@ -77,6 +77,7 @@ which markdown || try_install markdown
 echo "<?php curl_init() ?>" | php5-cgi || try_install php5-curl
 echo "<?php mysql_connect() ?>" | php5-cgi || try_install php5-mysql
 [ -f /usr/lib/lighttpd/mod_magnet.so ] || try_install lighttpd-mod-magnet
+echo "require 'mysql'" | ruby || try_install ruby-mysql
 
 # stop system's http serve
 # remove_service lighttpd-wps-community
