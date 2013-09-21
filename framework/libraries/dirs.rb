@@ -7,6 +7,7 @@ DOCUMENT_ROOT = REPO_ROOT + "/root"
 FRAMEWORK_DIR = REPO_ROOT + "/framework"
 DATA_DIR = REPO_ROOT + "/data"
 VAR_DIR = REPO_ROOT + "/var"
+LOG_DIR = REPO_ROOT + "/log"
 
 if not $LOAD_PATH.include? FRAMEWORK_DIR
   $LOAD_PATH << FRAMEWORK_DIR

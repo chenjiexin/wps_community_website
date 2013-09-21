@@ -1,16 +1,16 @@
 #!/usr/bin/env ruby
 
 require 'cgi'
-require 'mysql'
 require 'template/overall.rb'
+require 'libraries/dirs.rb'
 
-$con = Mysql.new '127.0.0.1', 'local', 'local', 'log'
 $url = "http://" + ENV['HTTP_HOST'] + ENV['REQUEST_URI']
 $remote = ENV['REMOTE_ADDR']
 
 def write_log
-  pst = $con.prepare "insert into e404(dt, url, remote) values(now(), ?, ?);"
-  pst.execute $url, $remote
+  open(LOG_DIR + "/404.log", "a") do |f|
+    f.puts Time.now.strftime("%F %T %z") + " " + $remote + " " + $url
+  end
 end
 
 write_log
