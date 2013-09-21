@@ -86,7 +86,7 @@ echo "require 'mysql'" | ruby || try_install ruby-mysql
 # create own serve
 config_file "setup/lighttpd.conf" "/etc/lighttpd/lighttpd.conf"
 config_file "setup/lighttpd-mimetype.conf" "/etc/lighttpd/lighttpd-mimetype.conf"
-update-rc.d lighttpd start 09 2 3 4 5 . stop 09 0 1 6 .
+update-rc.d lighttpd enable
 
 # make 404.log if not
 if [ ! -f "./log/404.log" ]; then
