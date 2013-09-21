@@ -1,11 +1,8 @@
 #!/usr/bin/env ruby
 
 require 'cgi'
-require './include/parts.rb'
-cgi = CGI.new
-if not $root2
-  $root2 = ".."
-end
+require 'template/overall.rb'
+require 'libraries/dirs.rb'
 
 NewsInfo = Struct.new(:title, :content)
 
@@ -36,7 +33,7 @@ end
 
 def html_news
   cont = ""
-  news = Dir.glob($root2 + "/data/news/*.news").sort {|a,b| -(File.basename(a).to_i <=> File.basename(b).to_i)}
+  news = Dir.glob(DATA_DIR + "/news/*.news").sort {|a,b| -(File.basename(a).to_i <=> File.basename(b).to_i)}
   news.each do |n|
     newsinfo = read_news n
     cont += "<h2>#{newsinfo.title}</h2><div class=\"framed\">#{newsinfo.content}</div>"
@@ -85,6 +82,6 @@ cont = <<EOF
 #{html_tail}
 EOF
 
-cgi.out {
+CGI.new.out {
   cont
 }

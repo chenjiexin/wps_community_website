@@ -1,16 +1,14 @@
 #!/usr/bin/env ruby
-require 'cgi'
+
+require 'pathname'
 
 if ARGV.size == 0
   return 1
 end
 
-$cgi = CGI.new
-$cookies = []
-$root = ENV['DOCUMENT_ROOT'] ? ENV['DOCUMENT_ROOT'] : Dir.pwd
-$root2 = $root + "/.."
+framepath = Pathname.new(__FILE__).dirname
 
-$LOAD_PATH << $root
+$LOAD_PATH << framepath
 
 begin
   require ARGV[0]
