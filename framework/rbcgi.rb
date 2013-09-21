@@ -1,14 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'pathname'
-
-if ARGV.size == 0
-  return 1
-end
-
-framepath = Pathname.new(__FILE__).dirname
-
-$LOAD_PATH << framepath
+require_relative 'libraries/dirs.rb'
 
 begin
   require ARGV[0]
