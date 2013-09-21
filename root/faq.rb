@@ -1,20 +1,17 @@
 #!/usr/bin/env ruby
 
 require 'cgi'
-require './include/parts.rb'
 require 'yaml'
 require 'zlib'
+require 'template/overall.rb'
+require 'libraries/dirs.rb'
 
 def get_ref_name q
   Zlib::crc32(q).to_s 16
 end
 
-if not $root2
-  $root2 = ".."
-end
-
 def html_faq
-  faqs = YAML.load_file $root2 + "/data/faqs.yaml"
+  faqs = YAML.load_file DATA_DIR + "/faqs.yaml"
   faqs.collect do |faq|
     ref_name = get_ref_name faq["Q"]
     "<a name=\"#{ref_name}\"></a>
