@@ -1,6 +1,7 @@
 version: 8.1.0.3724
 linux_version: Beta1 Patch1
 linux_version_short: b1
+release_data: 2013-01-31
 full_name: Kingsoft Office for Linux Beta1
 whats_new: |
     Fixup spreetsheets crashed when cuts&pastes cross files or tables

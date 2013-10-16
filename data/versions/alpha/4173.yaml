@@ -1,6 +1,7 @@
 version: 9.1.0.4173
 linux_version: Alpha12
 linux_version_short: a12
+release_data: 2013-09-10
 full_name: Kingsoft Office for Linux Alpha12
 whats_new: |
     Added: Saving as Microsoft Word 2007/2010 format files in Kingsoft Writer

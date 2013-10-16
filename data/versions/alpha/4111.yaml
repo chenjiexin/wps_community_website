@@ -1,6 +1,7 @@
 version: 9.1.0.4111
 linux_version: Alpha11 Patch2
 linux_version_short: a11p2
+release_data: 2013-07-23
 full_name: Kingsoft Office for Linux Alpha11 Patch2
 whats_new: |
     Added: Check Spelling for non-English language.

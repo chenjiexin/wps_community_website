@@ -1,6 +1,7 @@
 version: 9.1.0.4093
 linux_version: Alpha11
 linux_version_short: a11
+release_data: 2013-07-10
 full_name: Kingsoft Office for Linux Alpha11
 whats_new: |
     Added: Supported PivotTable function in Kingsoft Spreatsheets.

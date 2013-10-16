@@ -1,6 +1,7 @@
 version: 9.1.0.4127
 linux_version: Alpha11 Patch3
 linux_version_short: a11p3
+release_data: 2013-08-06
 full_name: Kingsoft Office for Linux Alpha11 Patch3
 whats_new: |
     Added: A user-friendly way to install dictionaries for spell checker.
