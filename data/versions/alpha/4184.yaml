@@ -1,6 +1,7 @@
 version: 9.1.0.4184
 linux_version: Alpha12 Patch1
 linux_version_short: a12p1
+release_data: 2013-09-18
 full_name: Kingsoft Office for Linux Alpha12 Patch1
 whats_new: |
     Added: Upgrade notice.
