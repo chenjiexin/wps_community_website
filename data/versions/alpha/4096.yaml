@@ -1,6 +1,7 @@
 version: 9.1.0.4096
 linux_version: Alpha11 Patch1
 linux_version_short: a11p1
+release_data: 2013-07-11
 full_name: Kingsoft Office for Linux Alpha11 Patch1
 whats_new: |
     Fixed: The program crashed when change some options in options dialog without open a document.
