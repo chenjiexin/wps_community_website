@@ -49,6 +49,13 @@ function start_service()
 	fi
 }
 
+function try_install()
+{
+	if ! apt-get install $1 -y; then
+		die "Cannot install $1"
+	fi
+}
+
 x_root="$PWD"
 if [ "$x_root" == "/var/www" ]; then
 	x_user="www-data"
@@ -63,21 +70,23 @@ fi
 [ "x$(pwd)" == "x${x_root}" ] || die "website must be installed to ${x_root}"
 
 # check required software
-which lighttpd || die "can not found nginx"
-which ruby || die "can not found ruby"
-which php5-cgi || die "can not found php5-cgi"
-which markdown || die "can not found markdown"
-echo "<?php curl_init() ?>" | php5-cgi || die "can not found php5-curl"
-echo "<?php mysql_connect() ?>" | php5-cgi || die "can not found php5-mysql"
+which lighttpd || try_install lighttpd
+which ruby || try_install ruby
+which php5-cgi || try_install php5-cgi
+which markdown || try_install markdown
+echo "<?php curl_init() ?>" | php5-cgi || try_install php5-curl
+echo "<?php mysql_connect() ?>" | php5-cgi || try_install php5-mysql
+[ -f /usr/lib/lighttpd/mod_magnet.so ] || try_install lighttpd-mod-magnet
+echo "require 'mysql'" | ruby || try_install ruby-mysql
 
 # stop system's http serve
-remove_service lighttpd-wps-community
-remove_service nginx
+# remove_service lighttpd-wps-community
+# remove_service nginx
 
 # create own serve
 config_file "setup/lighttpd.conf" "/etc/lighttpd/lighttpd.conf"
 config_file "setup/lighttpd-mimetype.conf" "/etc/lighttpd/lighttpd-mimetype.conf"
-update-rc.d lighttpd start 09 2 3 4 5 . stop 09 0 1 6 .
+update-rc.d lighttpd enable
 
 # make 404.log if not
 if [ ! -f "./log/404.log" ]; then

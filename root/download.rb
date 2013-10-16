@@ -1,18 +1,19 @@
 #!/usr/bin/env ruby
 
 require 'cgi'
+require 'yaml'
+require 'template/overall.rb'
+require 'libraries/dirs.rb'
 
 $cgi = CGI.new
 
-require './include/parts.rb'
-require './include/funcs.rb'
-require 'yaml'
-
-lang_redirect 'zh', 'http://community.wps.cn/download/#alpha'
-
-if not $root2
-  $root2 = ".."
+def lang_redirect lang, dest
+  if $cgi['lang'] == lang
+    $cgi.out('status' => '302', 'location' => dest) {''}
+    exit 0
+  end
 end
+lang_redirect 'zh', 'http://community.wps.cn/download/#alpha'
 
 def html_version_item f
   cont = ""
@@ -49,7 +50,7 @@ def html_version_item f
 end
 
 def html_versions
-  files = Dir.glob($root2 + "/data/versions/**/*.yaml").sort{|a,b| -(File.basename(a).to_i <=> File.basename(b).to_i) }
+  files = Dir.glob(DATA_DIR + "/versions/**/*.yaml").sort{|a,b| -(File.basename(a).to_i <=> File.basename(b).to_i) }
   files.collect do |f|
     html_version_item f
   end.join "\n"
@@ -68,6 +69,8 @@ cont = <<EOF
 </script>
 <div class="body">
 <h1>Product Download</h1>
+  <div class="framed" style="font-size:1.2em">If you like our product, tell your friends, if you don't, please <a href="/forum/">tell us</a>! (^_^)
+  </div>
 #{html_versions}
 </div>
 #{html_tail}

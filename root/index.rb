@@ -1,11 +1,8 @@
 #!/usr/bin/env ruby
 
 require 'cgi'
-require './include/parts.rb'
-cgi = CGI.new
-if not $root2
-  $root2 = ".."
-end
+require 'template/overall.rb'
+require 'libraries/dirs.rb'
 
 NewsInfo = Struct.new(:title, :content)
 
@@ -36,7 +33,7 @@ end
 
 def html_news
   cont = ""
-  news = Dir.glob($root2 + "/data/news/*.news").sort {|a,b| -(File.basename(a).to_i <=> File.basename(b).to_i)}
+  news = Dir.glob(DATA_DIR + "/news/*.news").sort {|a,b| -(File.basename(a).to_i <=> File.basename(b).to_i)}
   news.each do |n|
     newsinfo = read_news n
     cont += "<h2>#{newsinfo.title}</h2><div class=\"framed\">#{newsinfo.content}</div>"
@@ -55,10 +52,13 @@ cont = <<EOF
     <a href="#" class="slidesjs-next slidesjs-navigation"><img src="/images/right.png" alt="right arrow"/></a>
   </div>
   <div class="center">
-    Kingsoft Office is a simple, effective, powerful and comfortable office suite, which has been in release since 1989. Now porting to Linux. <br/>
-    Let us do our best to create the best Linux Office Suite.
-    We also have  versions for <a href="http://www.ksosoft.com/downloads/windows.html" target="_blank">Windows</a>, <a href="http://www.ksosoft.com/downloads/android.html" target="_blank">Android</a> and <a href="http://www.ksosoft.com/downloads/ios.html" target="_blank">iOS</a>, 
-    find out more <a href="http://www.ksosoft.com/" target="_blank">here</a>.
+    Kingsoft Office is a simple, powerful office suite with a confortable interface. 
+    Since 1988 Kingsoft has been thought of as one of the best office suites available, 
+    but there is no Linux version! Help us create the best Linux Office Suite.
+    We're also working on versions for <a href="http://www.ksosoft.com/downloads/windows.html" target="_blank">Windows</a>, 
+    <a href="http://www.ksosoft.com/downloads/android.html" target="_blank">Android</a> and 
+    <a href="http://www.ksosoft.com/downloads/ios.html" target="_blank">iOS</a>, 
+    <a href="http://www.ksosoft.com/" target="_blank">find out more here</a>.
   </div>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
   <script src="js/jquery.slides.min.js" type="text/javascript"></script>
@@ -82,6 +82,6 @@ cont = <<EOF
 #{html_tail}
 EOF
 
-cgi.out {
+CGI.new.out {
   cont
 }

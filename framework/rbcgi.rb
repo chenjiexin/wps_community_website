@@ -1,16 +1,6 @@
 #!/usr/bin/env ruby
-require 'cgi'
 
-if ARGV.size == 0
-  return 1
-end
-
-$cgi = CGI.new
-$cookies = []
-$root = ENV['DOCUMENT_ROOT'] ? ENV['DOCUMENT_ROOT'] : Dir.pwd
-$root2 = $root + "/.."
-
-$LOAD_PATH << $root
+require_relative 'libraries/dirs.rb'
 
 begin
   require ARGV[0]

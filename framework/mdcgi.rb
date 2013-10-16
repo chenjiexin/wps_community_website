@@ -1,11 +1,12 @@
 #!/usr/bin/env ruby
+
 require 'cgi'
+require_relative 'libraries/dirs.rb'
+require 'template/overall.rb'
 
 $cgi = CGI.new
 $mdfile = ENV['DOCUMENT_ROOT'] + ENV['REQUEST_URI']
 $mdfile.gsub!('//', '/')
-
-require '../root/include/parts.rb'
 
 begin
   cont = `markdown "#{$mdfile}" 2>&1`
