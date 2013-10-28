@@ -1,7 +1,7 @@
 version: 9.1.0.4207
 linux_version: Alpha12 Patch2
 linux_version_short: a12p2
-release_data: 2013-10-25
+release_data: 2013-10-28
 full_name: Kingsoft Office for Linux Alpha12 Patch2
 whats_new: |
     Added: Restore the sense of crashing.
