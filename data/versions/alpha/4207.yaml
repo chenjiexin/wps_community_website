@@ -32,11 +32,11 @@ whats_new: |
 addresses:
     - type: deb
       address: http://wdl.cache.ijinshan.com/wps/download/Linux/unstable/kingsoft-office_9.1.0.4207~a12p2_i386.deb
-      sha1sum: 77bc43e4523fced71f86a73a49ccd86362b711c8
+      sha1sum: c38a4614d9257213f5a907a7278002db228abf16
     - type: rpm
       address: http://wdl.cache.ijinshan.com/wps/download/Linux/unstable/kingsoft-office-9.1.0.4207-0.1.a12p2.i686.rpm
-      sha1sum: 80650080e1710bdeadf96ce2956e9f5af00d3603
+      sha1sum: be3b009f1d1fdf125ece48f4bd8448c1d2675a9f
     - type: tar.xz
       address: http://wdl.cache.ijinshan.com/wps/download/Linux/unstable/kingsoft-office_9.1.0.4207~a12p2_x86.tar.xz
-      sha1sum: afa7cc42ede1824caea7c2db3c5fc541c4b12698
+      sha1sum: 8ef9ccafbbba6a03be5ccf505451d140dbcec7d2
 
