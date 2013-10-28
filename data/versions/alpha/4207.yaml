@@ -1,0 +1,42 @@
+version: 9.1.0.4207
+linux_version: Alpha12 Patch2
+linux_version_short: a12p2
+release_data: 2013-10-25
+full_name: Kingsoft Office for Linux Alpha12 Patch2
+whats_new: |
+    Added: Restore the sense of crashing.
+    Added: Add a language option of Follow system locale.
+    Added: Add Insert Forms function in Kingsoft Spreadsheets.
+
+    Fixed: Kingsoft Office crashed when inserting the 32bits bitmap file.
+    Fixed: Kingsoft Office do not support Linux symbol link and physical link.
+    Fixed: The Recent Documents function do not work when using unity desktop.
+    Fixed: Vertical artwords cannot render alphabets correctly.
+    Fixed: Table height error when copy table from Kingsoft Spreadsheets to Kingsoft Writer by RTF format.
+
+    Fixed: Missing some formulae in Kingsoft Writer.
+    Fixed: Missing the Match case option in Find dialog in Kingsoft Writer.
+    Fixed: Kingsoft Spreadsheets crashed when copying shapes from Kingsoft Writer.
+    Fixed: Cannot insert Cross-reference footnote in Chinese version of Kingsoft Writer.
+    Fixed: The Simplified and Traditional Chinese conversion function cannot work after copying the data by RTF format in Kingsoft Writer.
+    Fixed: Cannot play sound in special PPTX files.
+
+    Fixed: Kingsoft Spreadsheets crashed when system printer driver is not completed.
+    Fixed: Lacking of text in a textbox when saving as ET/XLS formats in Kingsoft Spreadsheets.
+    Fixed: Cannot correct drawing combined shapes in Kingsoft Spreadsheets.
+    Fixed: Cannot read XLSX in some regions which using comma as decimal point.
+    Fixed: The Iteration calculation function cannot work in Kingsoft Spreadsheets.
+    Fixed: Cannot modify styles in Chinese verison of Kingsoft Spreadsheets.
+    Fixed: Cross-workbook references update error in Kingsoft Spreadsheets.
+    Fixed: Lacking of hyperlinks when saving as XLS format in Kingsoft Spreadsheets.
+addresses:
+    - type: deb
+      address: http://wdl.cache.ijinshan.com/wps/download/Linux/unstable/kingsoft-office_9.1.0.4207~a12p2_i386.deb
+      sha1sum: 77bc43e4523fced71f86a73a49ccd86362b711c8
+    - type: rpm
+      address: http://wdl.cache.ijinshan.com/wps/download/Linux/unstable/kingsoft-office-9.1.0.4207-0.1.a12p2.i686.rpm
+      sha1sum: 80650080e1710bdeadf96ce2956e9f5af00d3603
+    - type: tar.xz
+      address: http://wdl.cache.ijinshan.com/wps/download/Linux/unstable/kingsoft-office_9.1.0.4207~a12p2_x86.tar.xz
+      sha1sum: afa7cc42ede1824caea7c2db3c5fc541c4b12698
+
