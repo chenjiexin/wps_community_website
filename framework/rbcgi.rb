@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative 'libraries/dirs.rb'
+require "#{File.dirname(__FILE__)}/libraries/dirs.rb"
 
 begin
   require ARGV[0]

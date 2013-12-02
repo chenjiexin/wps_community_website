@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
+require "#{File.dirname(__FILE__)}/libraries/dirs.rb"
 require 'cgi'
-require_relative 'libraries/dirs.rb'
 require 'template/overall.rb'
 
 $dirpath = ENV['DOCUMENT_ROOT'] + ENV['REQUEST_URI']
