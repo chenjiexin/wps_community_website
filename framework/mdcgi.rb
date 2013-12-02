@@ -10,8 +10,9 @@ $mdfile.gsub!('//', '/')
 
 begin
   cont = `markdown "#{$mdfile}" 2>&1`
+  title = open($mdfile).readline
   $cgi.out do
-    html_header(ENV["REQUEST_URI"]) +
+    html_header(title) +
         "<div class='markdown'>" + cont + "</div>" +
         html_tail
   end
