@@ -32,7 +32,9 @@ to understand, a lonely art with our imagination created.
 So tell us why you like KSO/WPS, tell us why you do not like KSO/WPS, tell us what 
 you need, tell us your advice, let us know you are behind us.
 
-[Give us your feedback.](/forum)
+[Give us your feedback from forum.](/forum)
+
+[Or join our Group on Google: wps4linux](https://groups.google.com/forum/#!forum/wps4linux)
 
 Help us in other ways
 ---------------------
