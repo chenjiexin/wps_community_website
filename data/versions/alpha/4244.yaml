@@ -1,0 +1,30 @@
+version: 9.1.0.4244
+linux_version: Alpha12 Patch3
+linux_version_short: a12p3
+release_data: 2013-12-04
+full_name: Kingsoft Office for Linux Alpha12 Patch3
+whats_new: |
+    Fixed the crash issue while checking the printer information after adding or deleting a printer during program run.
+    Fixed Kingsoft Office was unable to open the specified file while dragging the file to the main editing area.
+    Fixed Kingsoft Office was unable to add custom spelling check dictionary of  Hunspell format.
+    Fixed European character with 'All Cap' setting not take effect in Kingsoft Office.
+    Fixed the crash issue caused by error text string format in some cases.
+    Fixed the text display issue when some controls access to the wrong color in some specific system color theme.
+    Fixed the suffix of the file name cannot be changed according to the selected file format in the native Save As dialog of Gnome desktop.
+    Fixed the values error of the width and height for images while saving as DOCX format in specific language area environment in Kingsoft Writer.
+    Fixed images missing while saving as MHT files format in Kingsoft Writer.
+    Fixed no recovery modify flags and editing view issue when file recovery after a crash in Kingsoft Writer.
+    Fixed the issue of not filtering CJK vocabularies that are not supported when checking spelling in Kingsoft Presentation.
+    Fixed content is empty when pasting text in HTML format in Kingsoft Presentation.
+    Fixed the crash issue while opening some specific files with charts in Kingsoft Spreadsheets.
+addresses:
+    - type: deb
+      address: http://wdl.cache.ijinshan.com/wps/download/Linux/unstable/kingsoft-office_9.1.0.4244~a12p3_i386.deb
+      sha1sum: 17ec28b5e4a765c36ad6775c6a7e83aa39753018 
+    - type: rpm
+      address: http://wdl.cache.ijinshan.com/wps/download/Linux/unstable/kingsoft-office-9.1.0.4244-0.1.a12p3.i686.rpm
+      sha1sum: f0b29bf441875fb1760962dc116499054b839c94
+    - type: tar.xz
+      address: http://wdl.cache.ijinshan.com/wps/download/Linux/unstable/kingsoft-office_9.1.0.4244~a12p3_x86.tar.xz
+      sha1sum: a7f504791c10fc05bafb1b5697ffdfa9fd68ad9a
+
