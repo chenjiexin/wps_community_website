@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
+require "#{File.dirname(__FILE__)}/libraries/dirs.rb"
 require 'cgi'
-require_relative 'libraries/dirs.rb'
 require 'template/overall.rb'
 
 $cgi = CGI.new
@@ -10,8 +10,9 @@ $mdfile.gsub!('//', '/')
 
 begin
   cont = `markdown "#{$mdfile}" 2>&1`
+  title = open($mdfile).readline
   $cgi.out do
-    html_header(ENV["REQUEST_URI"]) +
+    html_header(title) +
         "<div class='markdown'>" + cont + "</div>" +
         html_tail
   end
