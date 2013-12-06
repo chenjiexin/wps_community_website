@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby
 
+$mirrors = [
+  # owner, contact, region, addr, provider
+  [ "kingsoft", "wps_linux@kingsoft.com", "Italy/Europe", "http://37.247.55.101", "iperweb.com" ],
+  ]
+
 require 'cgi'
 require 'yaml'
 require 'template/overall.rb'
@@ -46,6 +51,10 @@ def html_version_item f
         <br/>SHA1: #{sha1}
         </p>"
     end
+  end
+  cont += "<h3>Get from other mirrors: </h3>"
+  $mirrors.each do |mirror|
+    cont += "<p class='dl_mirror'>#{mirror[2]}: <a href='#{mirror[3]}/#{y["linux_version_short"]}'>#{mirror[3]}/#{y["linux_version_short"]}</a></p>"
   end
   cont += "</div>"
   return cont

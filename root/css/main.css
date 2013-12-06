@@ -83,6 +83,9 @@ body {
   padding-left: 28px;
   background: url("/images/download.gif") no-repeat scroll 0px 8px transparent
 }
+.dl_mirror {
+  margin-left: 40px;
+}
 a:link,a:visited,a:hover,a:active{
   color:#6e96f2;
   text-decoration:none;
