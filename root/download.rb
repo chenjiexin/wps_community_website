@@ -3,6 +3,7 @@
 $mirrors = [
   # owner, contact, region, addr, provider
   [ "kingsoft", "wps_linux@kingsoft.com", "Italy/Europe", "http://37.247.55.101", "iperweb.com" ],
+  [ "jinchizhong", "jinchizhong@kingsoft.com", "Los Angeles/America", "http://23.229.123.142", "servermania.com" ],
   ]
 
 require 'cgi'
