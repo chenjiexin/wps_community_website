@@ -55,7 +55,7 @@ def html_version_item f
   end
   cont += "<h3>Get from other mirrors: </h3>"
   $mirrors.each do |mirror|
-    cont += "<p class='dl_mirror'>#{mirror[2]}: <a href='#{mirror[3]}/#{y["linux_version_short"]}'>#{mirror[3]}/#{y["linux_version_short"]}</a></p>"
+    cont += "<p class='dl_mirror'>#{mirror[2]}: <a href='#{mirror[3]}/#{y["linux_version_short"]}' target='_blank'>#{mirror[3]}/#{y["linux_version_short"]}</a></p>"
   end
   cont += "</div>"
   return cont
