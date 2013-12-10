@@ -25,7 +25,7 @@ def read_news fname
     f.each_line do |l|
       l.chomp!
       if l.size == 0
-        content += "\n"
+        content += "\n<br/>"
       else
         content += l + " "
       end
