@@ -52,6 +52,9 @@ if is_dir(request_uri) then
 	elseif is_file(request_uri .. "/index.rb") then
 		rewrite(request_uri .. "/index.rb")
 		return
+	elseif is_file(request_uri .. "/index.rss.rb") then
+		rewrite(request_uri .. "/index.rss.rb")
+		return
 	else
 		rewrite(document_root .. "/../framework/dircgi.rb")
 		return
