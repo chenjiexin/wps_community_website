@@ -12,8 +12,9 @@ $home = ENV['DOCUMENT_ROOT']
 def html_readme
   cont = ""
   if File.exist?($dirpath + "/README.md")
-    cont = `markdown #{$dirpath}"/README.md" 2>&1`
-    cont += "<br/>"
+    cont = "<div class='markdown'>"
+    cont += `markdown #{$dirpath}"/README.md" 2>&1`
+    cont += "<br/></div>"
   end
   return cont
 end
@@ -33,7 +34,7 @@ def html_sub_dir
   cont = ""
   x = Dir.entries($dirpath).each.to_a.sort do |a, b| a.to_s <=> b.to_s end
   cont += "<div class=\"mui_item\">"
-  cont += "<table summary=\"Directory Listing\" cellpadding=\"0\" cellspacing=\"10\" border=\"0\" width=\"1000\">"
+  cont += "<table summary=\"Directory Listing\" cellpadding=\"0\" border=\"0\" width=\"1000\">"
   cont += "<thread><tr><td class=\"n\" style=\"font-size:18px;\"><b>Name</b></td><td class=\"m\" style=\"font-size:18px;\"><b>Last Modified Time</b></td></tr></thread>"
   x.collect do |a|
     if (a != '.' && a != '..' && a != 'README.md')
