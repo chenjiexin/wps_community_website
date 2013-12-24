@@ -140,3 +140,16 @@ a:hover{
   border:#CCC dotted 1px;
   padding:15px 20px;
 }
+
+.file_name {
+  text-align: left;
+  width: 30%;
+}
+.file_size {
+  text-align: left;
+  width: 10%;
+}
+.file_time {
+  text-align: left;
+  width: 30%;
+}
