@@ -45,18 +45,18 @@ end
 
 def html_sub_dir
   cont = "<div class='file_list'><table style='width:100%;'>"
-  cont += "<thead><tr><th class='file_name'>File Name</th><th class='file_size'>File Size</th><th class='file_time'>Modify Time</th></tr></thead>"
+  cont += "<thead><tr><th class='file_name'>File Name</th><th class='file_size'>File Size</th><th class='file_time'>Modify Time (UTC)</th></tr></thead>"
   x = Dir.entries($dirpath).each.to_a.sort do |a, b| a.to_s <=> b.to_s end
   x.each do |a|
     if (a != '.' && a != '..' && a != 'README.md')
       if (FileTest.directory?($dirpath + "/" +a))
         cont += "<tr><td class='file_name'><a href=\"#{a}/\">#{a}/</a></td>
                      <td class='file_size'></td>
-                     <td class='file_time'>#{File.mtime($dirpath + "/" +a).getutc}</td></tr>"
+                     <td class='file_time'>#{File.mtime($dirpath + "/" +a).getutc.strftime "%F %T"}</td></tr>"
       else 
         cont += "<tr><td class='file_name'><a href=\"#{$filepath+"/" +a}\">#{a}</a></td>
                      <td class='file_size'>#{humen_readable_size($dirpath + "/" +a)}</td>
-                     <td class='file_time'>#{File.mtime($dirpath + "/" +a).getutc}</td></tr>"
+                     <td class='file_time'>#{File.mtime($dirpath + "/" +a).getutc.strftime "%F %T"}</td></tr>"
       end
     end
   end
