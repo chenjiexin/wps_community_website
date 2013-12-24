@@ -48,10 +48,10 @@ def html_sub_dir
   cont += "<thead><tr><th class='file_name'>File Name</th><th class='file_size'>File Size</th><th class='file_time'>Modify Time (UTC)</th></tr></thead>"
   x = Dir.entries($dirpath).each.to_a.sort do |a, b| a.to_s <=> b.to_s end
   x.each do |a|
-    if (a != '.' && a != '..' && a != 'README.md')
+    if (a != '.' && a != 'README.md')
       if (FileTest.directory?($dirpath + "/" +a))
-        cont += "<tr><td class='file_name'><a href=\"#{a}/\">#{a}/</a></td>
-                     <td class='file_size'></td>
+        cont += "<tr><td class='file_name'><a href=\"#{a}/\">#{a}</a>/</td>
+                     <td class='file_size'>-</td>
                      <td class='file_time'>#{File.mtime($dirpath + "/" +a).getutc.strftime "%F %T"}</td></tr>"
       else 
         cont += "<tr><td class='file_name'><a href=\"#{$filepath+"/" +a}\">#{a}</a></td>
