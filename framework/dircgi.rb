@@ -50,11 +50,11 @@ def html_sub_dir
   x.each do |a|
     if (a != '.' && a != 'README.md')
       if (FileTest.directory?($dirpath + "/" +a))
-        cont += "<tr><td class='file_name'><a href=\"#{a}/\">#{a}</a>/</td>
+        cont += "<tr><td class='file_name'><a href=\"./#{a}/\">#{a}</a>/</td>
                      <td class='file_size'>-</td>
                      <td class='file_time'>#{File.mtime($dirpath + "/" +a).getutc.strftime "%F %T"}</td></tr>"
       else 
-        cont += "<tr><td class='file_name'><a href=\"#{$filepath+"/" +a}\">#{a}</a></td>
+        cont += "<tr><td class='file_name'><a href=\"./#{a}\">#{a}</a></td>
                      <td class='file_size'>#{humen_readable_size($dirpath + "/" +a)}</td>
                      <td class='file_time'>#{File.mtime($dirpath + "/" +a).getutc.strftime "%F %T"}</td></tr>"
       end
