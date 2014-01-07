@@ -155,5 +155,9 @@ a:hover{
 }
 .file_time {
   text-align: left;
-  width: 30%;
+  width: 20%;
+}
+.file_sha1 {
+  text-align: left;
+  width: *;
 }
