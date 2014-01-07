@@ -141,6 +141,9 @@ a:hover{
   padding:15px 20px;
 }
 
+.file_list {
+  font-family: monospace;
+}
 .file_name {
   text-align: left;
   width: 30%;
