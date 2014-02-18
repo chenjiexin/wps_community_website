@@ -70,14 +70,15 @@ def mkdirs(path)
 	end
 	Dir.mkdir(path)
   end
+  return true
 end
 
 time = Time.now.strftime("%F %T %z").split(' ')[0].split('-')
-logPath = '/var/www' + "/log/" + time[0].to_s
+logPath = $root2 + "/log/wpsuse/" + time[0].to_s
 
 mkdirs(logPath)
 
-fileName = logPath + '/' +time[0].to_s + '-' + time[1].to_s
+fileName = logPath + '/' +time[0].to_s + '-' + time[1].to_s + '.txt'
 
 if qurey == ""
 else
