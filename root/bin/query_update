@@ -50,13 +50,7 @@ def get_alpha_version_info version
   return y
 end
 
-
-
-#alpha_version_num = get_alpha_version_info(get_last_alpha_version.to_s);
-#beta_version_num = get_beta_version_info(get_last_beta_version.to_s);
-
 print get_yaml_file(get_last_version.to_s)["version"] + "/" + get_yaml_file(get_last_version.to_s)["linux_version"]
-#print alpha_version_num["version"] +"/" + beta_version_num["version"] + "/" + alpha_version_num["linux_version"] +"/" + beta_version_num["linux_version"]
 
 cgi = CGI.new
 keys = cgi.keys.sort
@@ -69,7 +63,6 @@ keys.each do |key|
   qurey += cgi[key].gsub(" ", "")
 end
 
-
 def mkdirs(path)
   if(!File.directory?(path))
 	if(!mkdirs(File.dirname(path)))
@@ -79,9 +72,8 @@ def mkdirs(path)
   end
 end
 
-time = Time.now.split(' ')[0].split('-')
-
-logPath = $root2 + "/log/" + time[0].to_s
+time = Time.now.strftime("%F %T %z").split(' ')[0].split('-')
+logPath = '/var/www' + "/log/" + time[0].to_s
 
 mkdirs(logPath)
 
@@ -93,3 +85,4 @@ else
     line.puts Time.now.strftime("%F %T %z") + qurey + " ip=" + ENV['REMOTE_ADDR'] 
   end
 end
+
