@@ -2,7 +2,7 @@
 
 require 'yaml'
 require 'cgi'
-require 'fileutils.rb'
+require 'fileutils'
 
 puts "Content-Type: text/plain"
 puts 
@@ -64,18 +64,12 @@ keys.each do |key|
   qurey += cgi[key].gsub(" ", "")
 end
 
-pathName = $root2 + Time.now.strftime("/log/wpsuse/%Y")
 
-FileUtils.mkdir_p pathName
+FileUtils.mkdir_p ($root2+'/log/wpsuse')
+logFile = $root2 + Time.now.strftime("/log/wpsuse/%Y-%m.txt")
 
-fileName = $root2 + Time.now.strftime("/log/wpsuse/%Y/%Y-%m.txt")
-
-
-
-if qurey == ""
-else
-  open(fileName, "a") do |line|
-    line.puts Time.now.strftime("%F %T %z") + qurey + " ip=" + ENV['REMOTE_ADDR'] 
+if (!qurey.empty?)
+  open(logFile, "a") do |line|
+	line.puts Time.now.strftime("%F %T %z") + qurey + " ip=" + ENV['REMOTE_ADDR']
   end
 end
-
