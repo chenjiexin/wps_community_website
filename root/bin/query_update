@@ -69,12 +69,27 @@ keys.each do |key|
   qurey += cgi[key].gsub(" ", "")
 end
 
-logpath = $root2 + "/log/wpsuse.log"
 
-if qurey == ""
-else
-  open(logpath, "a") do |line|
-    line.puts Time.now.strftime("%F %T %z") + qurey + " ip=" + ENV['REMOTE_ADDR'] 
+def mkdirs(path)
+  if(!File.directory?(path))
+	if(!mkdirs(File.dirname(path)))
+	  return false
+	end
+	Dir.mkdir(path)
   end
 end
 
+time = Time.now.split(' ')[0].split('-')
+
+logPath = $root2 + "/log/" + time[0].to_s
+
+mkdirs(logPath)
+
+fileName = logPath + '/' +time[0].to_s + '-' + time[1].to_s
+
+if qurey == ""
+else
+  open(fileName, "a") do |line|
+    line.puts Time.now.strftime("%F %T %z") + qurey + " ip=" + ENV['REMOTE_ADDR'] 
+  end
+end
