@@ -2,6 +2,7 @@
 
 require 'yaml'
 require 'cgi'
+require 'fileutils.rb'
 
 puts "Content-Type: text/plain"
 puts 
@@ -63,22 +64,13 @@ keys.each do |key|
   qurey += cgi[key].gsub(" ", "")
 end
 
-def mkdirs(path)
-  if(!File.directory?(path))
-	if(!mkdirs(File.dirname(path)))
-	  return false
-	end
-	Dir.mkdir(path)
-  end
-  return true
-end
+pathName = $root2 + Time.now.strftime("/log/wpsuse/%Y")
 
-time = Time.now.strftime("%F %T %z").split(' ')[0].split('-')
-logPath = $root2 + "/log/wpsuse/" + time[0].to_s
+FileUtils.mkdir_p pathName
 
-mkdirs(logPath)
+fileName = $root2 + Time.now.strftime("/log/wpsuse/%Y/%Y-%m.txt")
 
-fileName = logPath + '/' +time[0].to_s + '-' + time[1].to_s + '.txt'
+
 
 if qurey == ""
 else
