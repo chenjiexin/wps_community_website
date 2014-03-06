@@ -6,6 +6,9 @@
 html {
   overflow-y: scroll;
 }
+body {
+  font-size: 13px;
+}
 body,div,p,ul,ul ol,ol dl,dt,dd,h1,h2,h3,h4,h5 {
   margin: 0;
   padding: 0;
@@ -20,25 +23,26 @@ li {
   padding: 0;
 }
 h1 {
-  margin-top: 18px;
-  margin-bottom: 18px;
-  font-size: 28px;
+  margin-top: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 2.2em;
 }
 h2 {
-  margin-top: 12px;
-  margin-bottom: 12px;
-  font-size: 20px;
+  margin-top: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 1.8em;
 }
 h3 {
-  margin-top: 8px;
-  margin-bottom: 8px;
-  font-size: 16px;
+  margin-top: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 1.4em;
 }
 .framed {
-  margin-bottom: 5px;
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
   background:#EFEFEF;
   border:#CCC dotted 1px;
-  padding:15px 20px;
+  padding:1em 1.4em;
 }
 body {
   background: #FFF url(/images/mainbg.png) repeat-x;
@@ -50,8 +54,8 @@ body {
   height: 62px;
 }
 #header {
-  height: 96px;
-  font-size: 17px;
+  height: 106px;
+  font-size: 12px;
 }
 #login {
   float: right;
@@ -59,6 +63,7 @@ body {
 .h_navi span {
   margin-left: 6px;
   margin-right: 20px;
+  font-size: 1.3em;
 }
 #h_searchbar {
   float: right;
@@ -139,4 +144,26 @@ a:hover{
   background:#EFEFEF;
   border:#CCC dotted 1px;
   padding:15px 20px;
+}
+
+.file_list {
+  font-family: monospace;
+  font-size: 1.1em;
+}
+.file_name {
+  text-align: left;
+  width: 40%;
+  height: 1.3em;
+}
+.file_size {
+  text-align: left;
+  width: 10%;
+}
+.file_time {
+  text-align: left;
+  width: 20%;
+}
+.file_sha1 {
+  text-align: left;
+  width: *;
 }

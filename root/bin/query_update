@@ -2,6 +2,7 @@
 
 require 'yaml'
 require 'cgi'
+require 'fileutils'
 
 puts "Content-Type: text/plain"
 puts 
@@ -50,13 +51,7 @@ def get_alpha_version_info version
   return y
 end
 
-
-
-#alpha_version_num = get_alpha_version_info(get_last_alpha_version.to_s);
-#beta_version_num = get_beta_version_info(get_last_beta_version.to_s);
-
 print get_yaml_file(get_last_version.to_s)["version"] + "/" + get_yaml_file(get_last_version.to_s)["linux_version"]
-#print alpha_version_num["version"] +"/" + beta_version_num["version"] + "/" + alpha_version_num["linux_version"] +"/" + beta_version_num["linux_version"]
 
 cgi = CGI.new
 keys = cgi.keys.sort
@@ -69,12 +64,12 @@ keys.each do |key|
   qurey += cgi[key].gsub(" ", "")
 end
 
-logpath = $root2 + "/log/wpsuse.log"
 
-if qurey == ""
-else
-  open(logpath, "a") do |line|
-    line.puts Time.now.strftime("%F %T %z") + qurey + " ip=" + ENV['REMOTE_ADDR'] 
+FileUtils.mkdir_p ($root2+'/log/wpsuse')
+logFile = $root2 + Time.now.strftime("/log/wpsuse/%Y-%m.txt")
+
+if (!qurey.empty?)
+  open(logFile, "a") do |line|
+	line.puts Time.now.strftime("%F %T %z") + qurey + " ip=" + ENV['REMOTE_ADDR']
   end
 end
-

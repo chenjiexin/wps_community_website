@@ -9,6 +9,7 @@
 /root/forum/.settings
 /root/forum/images/avatars/upload
 /root/forum/files/
+/root/tmp
 
 *~
 *.swp

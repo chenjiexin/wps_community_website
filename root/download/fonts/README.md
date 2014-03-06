@@ -11,3 +11,6 @@ later, you do not need mtextra.ttf.
 
 You can download them singly, or directly download 
 [wps\_symbol\_fonts.zip](wps_symbol_fonts.zip).
+
+Normally, you can install them by double click them. If you can't install them
+by double click. You can copy them to ~/.fonts.

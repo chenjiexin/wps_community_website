@@ -48,14 +48,16 @@ def html_version_item f
       filename = address.rpartition("/")[2]
       sha1 = ver["sha1sum"]
       cont += "<p class=\"dl_addr\">
-        <a href=\"#{address}\" onclick=\"onDownload(this)\" data-filename=\"#{filename}\">#{filename}</a>
+        <a href=\"#{address}\" onclick=\"trackCND('#{address}', '#{filename}'); return false\">#{filename}</a>
         <br/>SHA1: #{sha1}
         </p>"
     end
   end
   cont += "<h3>Get from other mirrors: </h3>"
   $mirrors.each do |mirror|
-    cont += "<p class='dl_mirror'>#{mirror[2]}: <a href='#{mirror[3]}/#{y["linux_version_short"]}' target='_blank'>#{mirror[3]}/#{y["linux_version_short"]}</a></p>"
+    cont += "<p class='dl_mirror'>#{mirror[2]}: 
+      <a href='#{mirror[3]}/#{y["linux_version_short"]}' target='_blank' onclick=\"trackMirror('#{mirror[2]}') \">
+        #{mirror[3]}/#{y["linux_version_short"]}</a></p>"
   end
   cont += "</div>"
   return cont
@@ -71,20 +73,22 @@ end
 cont = <<EOF
 #{html_header "Downloads"}
 <script type="text/javascript">
-  function onDownload(n)
+  function trackCND(url, fn) {
+    ga('send', 'event', 'download', 'CDN', fn, {'hitCallback':
+      function () {
+        document.location = url;
+      }
+    });
+  }
+  function trackMirror(mr)
   {
-    url = "/bin/st.rb?t=download&amp;a=" + n.getAttribute("data-filename") + "&amp;r=" + Math.random();
-    a = new XMLHttpRequest();
-    a.open("GET", url , false);
-    a.send();
+    ga('send', 'event', 'download', 'mirror', mr);
   }
 </script>
-<div class="body">
 <h1>Product Download</h1>
   <div class="framed" style="font-size:1.2em">If you like our product, tell your friends, if you don't, please <a href="/forum/">tell us</a>! (^_^)
   </div>
 #{html_versions}
-</div>
 #{html_tail}
 EOF
 
