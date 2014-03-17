@@ -1,0 +1,25 @@
+version: 9.1.0.4280
+linux_version: Alpha12 Patch4
+linux_version_short: a12p4
+release_data: 2014-03-17
+full_name: Kingsoft Office for Linux Alpha12 Patch4
+whats_new: |
+    Update End User License Agreement for Kingsoft Office.
+    Fixed the issue that menu item cannot be highlighted when selected.
+    Fixed the slow response issue when installing Kingsoft Office in the new version of Ubuntu.
+    Fixed the issue that border line cannot show after saving and reopening in DOC file format.
+    Fixed the line color missing issue in some shapes while saving in DOCX file format.
+    Fixed the rotation angle reading error of character in the text box in PPT format file.
+    Fixed the issue that cannot drag the slide using mouse in Kingsoft Presentation.
+    Fixed the issue that cannot set the pattern effect for narrow horizontal and narrow vertical in Shape Fill in Kingsoft Presentation.
+addresses:
+    - type: deb
+      address: http://kdl.cc.ksosoft.com/wps-community/kingsoft-office_9.1.0.4280~a12p4_i386.deb
+      sha1sum: 74809cf403d10dcfbcab96494756d43063b694b6 
+    - type: rpm
+      address: http://kdl.cc.ksosoft.com/wps-community/kingsoft-office-9.1.0.4280-0.1.a12p4.i686.rpm
+      sha1sum: 3a7137991e12b7288195540137e0c44a00047a95
+    - type: tar.xz
+      address: http://kdl.cc.ksosoft.com/wps-community/kingsoft-office_9.1.0.4280~a12p4_x86.tar.xz
+      sha1sum: 6a59522f74e87a05370acfabc8b4cbe94bb79cda
+
