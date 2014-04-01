@@ -45,8 +45,10 @@ def html_tail
 <div id="foot"> 
   <span><a href="http://www.ksosoft.com" target="_blank">Official Site</a> | <a href="http://www.wps.cn" target="_blank">Chinese Site</a>
     | <a href="http://community.wps.cn" target="_blank">Chinese Community</a> | <a href="/aboutus.html">About us</a>
-    | <a href="mailto:wps_linux@kingsoft.com">Contact us</a></span>
-  <span>Copyright &copy; 1988-2013 Kingsoft Office Corporation, All Rights Reserved</span>
+    | <a href="mailto:wps_linux@kingsoft.com">Contact us</a>
+    | <a href="/distribution.md">Distribution</a>
+  </span>
+  <span>Copyright &copy; 1988-2014 Kingsoft Office Corporation, All Rights Reserved</span>
 </div>
 </body>
 </html>
