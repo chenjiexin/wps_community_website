@@ -1,7 +1,6 @@
 Kingsoft Office Distribution
 ===
-for Linux Community Version Only
----
+### for Linux Community Version Only
 <hr/>
 <br/>
 <p>Thank you for your interest in Kingsoft Office.</p>
